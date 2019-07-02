@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EvenDemo</string>
+
+
+
+    <!--LiveDataFragment-->
+    <string name="hint_user_name">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="btn_login">登陆</string>
+
+
+</resources>
