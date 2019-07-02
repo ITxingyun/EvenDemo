@@ -23,11 +23,13 @@ class LiveDataFragment : BaseFragment() {
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
         viewModel.userName.observe(this, Observer {
             Log.e("111", it)
+
         })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentLiveDataBinding>(inflater, R.layout.fragment_live_data, container, false)
+                .apply { viewModel = this@LiveDataFragment.viewModel }
                 .also { binding = it }
                 .root
 

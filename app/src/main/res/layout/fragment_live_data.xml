@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:hint="@string/hint_user_name"
-                android:text="@{viewModel.userName}"/>
+                android:text="@={viewModel.userName}"/>
 
         <android.support.v7.widget.AppCompatEditText
                 android:layout_width="match_parent"
