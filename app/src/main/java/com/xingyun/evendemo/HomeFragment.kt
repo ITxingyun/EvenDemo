@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
-import com.xingyun.evendemo.livedata.LiveDataFragment
+import com.xingyun.evendemo.mvvm.LoginFragment
 
 class HomeFragment : BaseFragment(), MainPagerAdapter.OnMainPagerItemClickListener {
 
@@ -30,10 +30,10 @@ class HomeFragment : BaseFragment(), MainPagerAdapter.OnMainPagerItemClickListen
 
     private fun getData(): List<BaseFragment> =
             listOf(
-                    LiveDataFragment(),
-                    LiveDataFragment(),
-                    LiveDataFragment(),
-                    LiveDataFragment()
+                    LoginFragment(),
+                    LoginFragment(),
+                    LoginFragment(),
+                    LoginFragment()
             )
 
 

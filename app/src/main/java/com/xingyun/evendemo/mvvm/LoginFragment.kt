@@ -1,4 +1,4 @@
-package com.xingyun.evendemo.livedata
+package com.xingyun.evendemo.mvvm
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -10,28 +10,31 @@ import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.BaseFragment
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.databinding.FragmentLiveDataBinding
+import com.xingyun.evendemo.databinding.FragmentLoginBinding
 
-class LiveDataFragment : BaseFragment() {
-    private lateinit var binding: FragmentLiveDataBinding
+class LoginFragment : BaseFragment() {
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
+    private var has = false
 
-    override fun getFragmentTag(): String = "LiveDataFragment"
+    override fun getFragmentTag(): String = "LoginFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
         viewModel.userName.observe(this, Observer {
-            Log.e("111", it)
-
+            if (has) {
+                Log.e("even", it)
+            }
+            has = true
         })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            DataBindingUtil.inflate<FragmentLiveDataBinding>(inflater, R.layout.fragment_live_data, container, false)
-                .apply { viewModel = this@LiveDataFragment.viewModel }
-                .also { binding = it }
-                .root
+        DataBindingUtil.inflate<FragmentLoginBinding>(inflater, R.layout.fragment_login, container, false)
+            .apply { viewModel = this@LoginFragment.viewModel }
+            .also { binding = it }
+            .root
 
     override fun initData() {
 

@@ -5,7 +5,7 @@
 
         <variable
                 name="viewModel"
-                type="com.xingyun.evendemo.livedata.LoginViewModel"/>
+                type="com.xingyun.evendemo.mvvm.LoginViewModel"/>
     </data>
 
     <LinearLayout
