@@ -16,6 +16,8 @@ public class LengthOfLongestSubstringTest {
         assertEquals(lengthOfLongestSubstring(""), 0);
         assertEquals(lengthOfLongestSubstring("a"), 1);
         assertEquals(lengthOfLongestSubstring("dvdf"), 3);
+        assertEquals(lengthOfLongestSubstring("abba"), 2);
+        assertEquals(lengthOfLongestSubstring("tmmzuxt"), 5);
     }
 
 
@@ -44,14 +46,16 @@ public class LengthOfLongestSubstringTest {
      *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
      */
     private int lengthOfLongestSubstring(String s) {
-        //dvdf
+        //tmmzuxt
         int index = 0;
         int longestStr = 0;
         HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (map.get(c) != null) {
-                index = i;
+                if (index < map.get(c) + 1) {
+                    index = map.get(c) + 1;
+                }
             }
             map.put(c, i);
             int tempL = i - index + 1;
