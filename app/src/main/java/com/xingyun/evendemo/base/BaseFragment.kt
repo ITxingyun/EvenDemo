@@ -1,9 +1,10 @@
-package com.xingyun.evendemo
+package com.xingyun.evendemo.base
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 
-abstract class BaseFragment : androidx.fragment.app.Fragment() {
+abstract class BaseFragment : Fragment() {
 
     abstract fun getFragmentTag(): String
 

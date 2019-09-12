@@ -1,4 +1,4 @@
-package com.xingyun.evendemo
+package com.xingyun.evendemo.base
 
 import androidx.databinding.ViewDataBinding
 import androidx.annotation.NonNull

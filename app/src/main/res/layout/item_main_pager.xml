@@ -7,11 +7,11 @@
 
         <variable
             name="listener"
-            type="com.xingyun.evendemo.MainPagerAdapter.OnMainPagerItemClickListener" />
+            type="com.xingyun.evendemo.home.HomePagerAdapter.OnMainPagerItemClickListener" />
 
         <variable
             name="fragment"
-            type="com.xingyun.evendemo.BaseFragment" />
+            type="com.xingyun.evendemo.base.BaseFragment" />
 
     </data>
 

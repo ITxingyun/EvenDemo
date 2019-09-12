@@ -1,7 +1,9 @@
-package com.xingyun.evendemo
+package com.xingyun.evendemo.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.xingyun.evendemo.R
+import com.xingyun.evendemo.base.BaseFragment
 
 class MainActivity : AppCompatActivity() {
 

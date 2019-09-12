@@ -1,11 +1,14 @@
-package com.xingyun.evendemo
+package com.xingyun.evendemo.home
 
 import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.xingyun.evendemo.R
+import com.xingyun.evendemo.base.BaseAdapter
+import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.ItemMainPagerBinding
 
-class MainPagerAdapter(
+class HomePagerAdapter(
     private val fragments: List<BaseFragment>,
     private val onMainPagerItemClickListener: OnMainPagerItemClickListener
 ) : BaseAdapter<ItemMainPagerBinding>() {
