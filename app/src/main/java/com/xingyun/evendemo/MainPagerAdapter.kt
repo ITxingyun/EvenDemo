@@ -1,6 +1,6 @@
 package com.xingyun.evendemo
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.xingyun.evendemo.databinding.ItemMainPagerBinding

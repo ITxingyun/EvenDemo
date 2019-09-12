@@ -1,6 +1,6 @@
 package com.xingyun.evendemo
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         addFragment(HomeFragment())
     }
 
-    fun addFragment(fragment: BaseFragment) {
+    private fun addFragment(fragment: BaseFragment) {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, fragment, fragment.getFragmentTag())
             .commit()

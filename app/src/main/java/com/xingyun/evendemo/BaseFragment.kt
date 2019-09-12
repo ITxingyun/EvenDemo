@@ -1,9 +1,9 @@
 package com.xingyun.evendemo
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.widget.Toast
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : androidx.fragment.app.Fragment() {
 
     abstract fun getFragmentTag(): String
 
@@ -12,5 +12,11 @@ abstract class BaseFragment : Fragment() {
         initData()
     }
 
-    abstract fun initData()
+    open fun initData() = Unit
+
+    fun showMessage(message: String) {
+        context?.let {
+            Toast.makeText(it, message, Toast.LENGTH_SHORT).show()
+        }
+    }
 }

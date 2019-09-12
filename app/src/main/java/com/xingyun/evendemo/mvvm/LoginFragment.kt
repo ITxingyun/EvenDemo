@@ -1,10 +1,8 @@
 package com.xingyun.evendemo.mvvm
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,19 +13,25 @@ import com.xingyun.evendemo.databinding.FragmentLoginBinding
 class LoginFragment : BaseFragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
-    private var has = false
 
     override fun getFragmentTag(): String = "LoginFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        viewModel.userName.observe(this, Observer {
-            if (has) {
-                Log.e("even", it)
+        ViewModelProviders.of(this).get(LoginViewModel::class.java)
+            .also { viewModel = it }
+            .run {
+                loginResult.observe(this@LoginFragment, EventObserver{
+                    when(it) {
+                        TEXT_EMPTY_USER_NAME ->
+                            showMessage(getString(R.string.login_user_name_error_tip))
+                        TEXT_EMPTY_PASSWORD ->
+                            showMessage(getString(R.string.login_user_password_tip))
+                        LOGIN_SUCCESS ->
+                            showMessage(getString(R.string.login_success))
+                    }
+                })
             }
-            has = true
-        })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -36,8 +40,9 @@ class LoginFragment : BaseFragment() {
             .also { binding = it }
             .root
 
-    override fun initData() {
-
+    companion object {
+        const val TEXT_EMPTY_USER_NAME = "text_empty_user_name"
+        const val TEXT_EMPTY_PASSWORD = "text_empty_password"
+        const val LOGIN_SUCCESS = "login_success"
     }
-
 }
