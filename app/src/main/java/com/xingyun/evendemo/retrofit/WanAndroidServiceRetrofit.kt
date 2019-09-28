@@ -12,6 +12,7 @@ class WanAndroidServiceRetrofit: AbstractServiceRetrofit() {
 
     fun login(userProfile: UserProfile): Observable<String> = wanAndroidService.login(userProfile)
 
+
     interface WanAndroidService {
 
         @POST("user/login")
