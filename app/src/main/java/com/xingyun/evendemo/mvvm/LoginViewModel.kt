@@ -27,6 +27,9 @@ class LoginViewModel : ViewModel() {
             password.value.isNullOrEmpty() -> _loginResult.value = Event(TEXT_EMPTY_PASSWORD)
             else -> {
                 wanAndroidServiceRetrofit.login(UserProfile(userName.value, password.value))
+                    .flatMap {
+                        wanAndroidServiceRetrofit.loadFriendWebsite()
+                    }
                     .compose(applySchedulers())
                     .subscribe(ObserverWrapper.create {
                         subscribed {
