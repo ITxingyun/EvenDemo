@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
+import com.xingyun.evendemo.bug.HomeBugFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
 import com.xingyun.evendemo.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.mvvm.LoginFragment
@@ -45,7 +46,8 @@ class HomeFragment : BaseFragment(),
             LoginFragment(),
             PicassoFragment(),
             LifecycleFragment(),
-            LoginFragment()
+            LoginFragment(),
+            HomeBugFragment()
         )
 
 

@@ -7,14 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentLifecycleBinding
-import com.xingyun.evendemo.home.MainActivityViewModel
 
 class LifecycleFragment : BaseFragment(), Navigator {
-    private lateinit var mainActivityViewModel: MainActivityViewModel
 
     override fun getFragmentTag(): String = "Fragment Lifecycle"
 
@@ -34,10 +31,6 @@ class LifecycleFragment : BaseFragment(), Navigator {
         savedInstanceState: Bundle?
     ): View? {
         Log.e("LifecycleFragment EvenDemo--->", "onCreateView")
-        activity?.let { act ->
-            ViewModelProviders.of(act).get(MainActivityViewModel::class.java)
-                .also { mainActivityViewModel = it }
-        }
         return DataBindingUtil.inflate<FragmentLifecycleBinding>(
             inflater,
             R.layout.fragment_lifecycle,
@@ -87,11 +80,11 @@ class LifecycleFragment : BaseFragment(), Navigator {
     }
 
     override fun addFragment() {
-        mainActivityViewModel.addFragmentToActivity(AddFragment())
+        obtainMainActivityViewModel()?.addFragmentToActivity(AddFragment())
     }
 
     override fun replaceFragment() {
-        mainActivityViewModel.replaceFragmentToActivity(ReplaceFragment())
+        obtainMainActivityViewModel()?.replaceFragmentToActivity(ReplaceFragment())
     }
 }
 

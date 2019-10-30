@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    fun addFragment(fragment: BaseFragment, isAddToBackStack: Boolean = true) {
+    private fun addFragment(fragment: BaseFragment, isAddToBackStack: Boolean = true) {
         supportFragmentManager.beginTransaction()
             .apply {
                 if (isAddToBackStack) {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 add(R.id.fragment_container, fragment, fragment.getFragmentTag())
             }
-            .commit()
+            .commitAllowingStateLoss()
     }
 
     fun replaceFragment(fragment: BaseFragment, isAddToBackStack: Boolean = true) =
@@ -50,6 +50,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 replace(R.id.fragment_container, fragment, fragment.getFragmentTag())
             }
-            .commit()
+            .commitAllowingStateLoss()
 
 }

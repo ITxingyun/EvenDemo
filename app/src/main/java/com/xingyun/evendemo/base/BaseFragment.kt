@@ -3,6 +3,8 @@ package com.xingyun.evendemo.base
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import com.xingyun.evendemo.home.MainActivityViewModel
 
 abstract class BaseFragment : Fragment() {
 
@@ -20,4 +22,7 @@ abstract class BaseFragment : Fragment() {
             Toast.makeText(it, message, Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun obtainMainActivityViewModel() =
+        activity?.let { ViewModelProviders.of(it).get(MainActivityViewModel::class.java) }
 }
