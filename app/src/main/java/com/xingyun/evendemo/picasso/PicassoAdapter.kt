@@ -9,7 +9,7 @@ import com.xingyun.evendemo.databinding.ItemPicassoBinding
 
 class PicassoAdapter(
     private val imageUrls: List<String>
-): BaseAdapter<ItemPicassoBinding>() {
+) : BaseAdapter<ItemPicassoBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.item_picasso
 

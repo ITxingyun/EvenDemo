@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
-import com.xingyun.evendemo.bug.HomeBugFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
 import com.xingyun.evendemo.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.mvvm.LoginFragment
 import com.xingyun.evendemo.picasso.PicassoFragment
+import com.xingyun.evendemo.viewpage.ViewPage2Fragment
 
 class HomeFragment : BaseFragment(),
     HomePagerAdapter.OnMainPagerItemClickListener {
@@ -47,7 +47,8 @@ class HomeFragment : BaseFragment(),
             PicassoFragment(),
             LifecycleFragment(),
             LoginFragment(),
-            HomeBugFragment()
+//            HomeBugFragment()
+            ViewPage2Fragment()
         )
 
 
