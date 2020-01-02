@@ -13,6 +13,7 @@ import com.xingyun.evendemo.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.mvvm.LoginFragment
 import com.xingyun.evendemo.picasso.PicassoFragment
 import com.xingyun.evendemo.viewpage.ViewPage2Fragment
+import com.xingyun.evendemo.window.WindowFragment
 
 class HomeFragment : BaseFragment(),
     HomePagerAdapter.OnMainPagerItemClickListener {
@@ -47,8 +48,8 @@ class HomeFragment : BaseFragment(),
             PicassoFragment(),
             LifecycleFragment(),
             LoginFragment(),
-//            HomeBugFragment()
-            ViewPage2Fragment()
+            ViewPage2Fragment(),
+            WindowFragment()
         )
 
 

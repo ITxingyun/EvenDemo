@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentViewPageBinding
+import kotlin.math.abs
 
 class ViewPage2Fragment : BaseFragment() {
     private lateinit var binding: FragmentViewPageBinding
@@ -25,7 +26,7 @@ class ViewPage2Fragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val pages = listOf("page one", "page tow", "page three", "page four", "page five")
+        val pages = listOf("page one", "page tow", "page thr`ee", "page four", "page five")
         binding.vpSimple.apply {
             adapter = SimplePageAdapter(pages)
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -66,7 +67,7 @@ class ViewPage2Fragment : BaseFragment() {
                 position < -1 ->
                     page.alpha = 0.1f
                 position <= 1 -> {
-                    page.alpha = Math.max(0.2f, 1 - Math.abs(position))
+                    page.alpha = 0.2f.coerceAtLeast(1 - abs(position))
                 }
                 else -> page.alpha = 0.1f
             }

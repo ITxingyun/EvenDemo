@@ -20,6 +20,7 @@
                 android:id="@+id/vp_simple"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:orientation="vertical"
                 android:layout_marginBottom="30dp" />
 
 
