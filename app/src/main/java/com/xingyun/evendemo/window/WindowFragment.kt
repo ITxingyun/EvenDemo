@@ -1,7 +1,10 @@
 package com.xingyun.evendemo.window
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.graphics.PixelFormat
 import android.os.Bundle
+import android.provider.Settings
 import android.view.*
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
@@ -10,7 +13,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentWindowBinding
 import android.view.WindowManager
-import android.os.Build
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 class WindowFragment : BaseFragment() {
     private lateinit var binding: FragmentWindowBinding
@@ -24,6 +28,12 @@ class WindowFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        activity?.let {
+            if (ContextCompat.checkSelfPermission(it, Manifest.permission.SYSTEM_ALERT_WINDOW) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(it, arrayOf(Manifest.permission.SYSTEM_ALERT_WINDOW), 1)
+            }
+        }
+
         ViewModelProviders.of(this)
                 .get(WindowViewModel::class.java)
                 .also { binding.viewModel = it }
@@ -32,22 +42,14 @@ class WindowFragment : BaseFragment() {
                         addWindow()
                     })
                 }
-
-
     }
 
     private fun addWindow() {
-
-        val type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
-        } else {
-            WindowManager.LayoutParams.TYPE_PHONE
-        }
         val flag = WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE.or(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN).or(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
         val button = Button(context).apply { text = "Button" }
         val layoutParams = WindowManager.LayoutParams(300, 300,
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                type, PixelFormat.TRANSPARENT).apply { flags = flag}
+                flag, PixelFormat.TRANSPARENT)
 
         activity?.let {
             it.windowManager.addView(button, layoutParams)

@@ -14,6 +14,7 @@ import com.xingyun.evendemo.mvvm.LoginFragment
 import com.xingyun.evendemo.picasso.PicassoFragment
 import com.xingyun.evendemo.viewpage.ViewPage2Fragment
 import com.xingyun.evendemo.window.WindowFragment
+import com.xingyun.okhttp.OkHttpFragment
 
 class HomeFragment : BaseFragment(),
     HomePagerAdapter.OnMainPagerItemClickListener {
@@ -49,6 +50,7 @@ class HomeFragment : BaseFragment(),
             LifecycleFragment(),
             LoginFragment(),
             ViewPage2Fragment(),
+            OkHttpFragment(),
             WindowFragment()
         )
 
