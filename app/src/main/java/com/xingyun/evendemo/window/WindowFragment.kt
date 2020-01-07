@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.PixelFormat
 import android.os.Bundle
-import android.provider.Settings
 import android.view.*
 import android.widget.Button
 import androidx.databinding.DataBindingUtil

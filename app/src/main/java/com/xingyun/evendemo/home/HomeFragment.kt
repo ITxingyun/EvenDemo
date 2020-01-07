@@ -9,32 +9,26 @@ import android.view.ViewGroup
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
+import com.xingyun.evendemo.inputmode.InputModeFragment
 import com.xingyun.evendemo.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.mvvm.LoginFragment
 import com.xingyun.evendemo.picasso.PicassoFragment
 import com.xingyun.evendemo.viewpage.ViewPage2Fragment
 import com.xingyun.evendemo.window.WindowFragment
-import com.xingyun.okhttp.OkHttpFragment
+import com.xingyun.evendemo.okhttp.OkHttpFragment
 
 class HomeFragment : BaseFragment(),
-    HomePagerAdapter.OnMainPagerItemClickListener {
+        HomePagerAdapter.OnMainPagerItemClickListener {
 
     private lateinit var binding: FragmentHomeBinding
 
     override fun getFragmentTag(): String = "HomeFragment"
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View =
-        DataBindingUtil.inflate<FragmentHomeBinding>(
-            inflater,
-            R.layout.fragment_home, container, false
-        )
-            .also { binding = it }
-            .root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+            DataBindingUtil.inflate<FragmentHomeBinding>(inflater, R.layout.fragment_home, container, false)
+                    .also { binding = it }
+                    .root
 
     override fun initData() {
         binding.recyclerView.apply {
@@ -44,15 +38,15 @@ class HomeFragment : BaseFragment(),
     }
 
     private fun getData(): List<BaseFragment> =
-        listOf(
-            LoginFragment(),
-            PicassoFragment(),
-            LifecycleFragment(),
-            LoginFragment(),
-            ViewPage2Fragment(),
-            OkHttpFragment(),
-            WindowFragment()
-        )
+            listOf(
+                    LoginFragment(),
+                    PicassoFragment(),
+                    LifecycleFragment(),
+                    InputModeFragment(),
+                    ViewPage2Fragment(),
+                    OkHttpFragment(),
+                    WindowFragment()
+            )
 
 
     override fun onItemClick(fragment: BaseFragment) {
