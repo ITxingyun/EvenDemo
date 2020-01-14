@@ -16,7 +16,7 @@
             tools:ignore="HardcodedDebugMode"
             tools:replace="android:debuggable">
         <activity android:name=".home.MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

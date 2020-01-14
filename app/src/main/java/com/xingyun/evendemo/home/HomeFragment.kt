@@ -9,13 +9,13 @@ import android.view.ViewGroup
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.base.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
-import com.xingyun.evendemo.inputmode.InputModeFragment
-import com.xingyun.evendemo.lifecycle.LifecycleFragment
+import com.xingyun.evendemo.bug.softkeyboard.InputModeFragment
+import com.xingyun.evendemo.fragment.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.mvvm.LoginFragment
-import com.xingyun.evendemo.picasso.PicassoFragment
-import com.xingyun.evendemo.viewpage.ViewPage2Fragment
-import com.xingyun.evendemo.window.WindowFragment
-import com.xingyun.evendemo.okhttp.OkHttpFragment
+import com.xingyun.evendemo.image.picasso.PicassoFragment
+import com.xingyun.evendemo.view.viewpage.ViewPage2Fragment
+import com.xingyun.evendemo.source.window.WindowFragment
+import com.xingyun.evendemo.http.okhttp.OkHttpFragment
 
 class HomeFragment : BaseFragment(),
         HomePagerAdapter.OnMainPagerItemClickListener {

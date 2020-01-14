@@ -6,11 +6,12 @@ import android.view.View
 import android.widget.FrameLayout
 
 class SoftHideKeyBoardUtil(act: Activity) {
-    private var content: FrameLayout = act.findViewById(android.R.id.content)
-    private var childOfContent: View = content.getChildAt(0)
-    private var frameLayoutParams: FrameLayout.LayoutParams
     private var usableHeightPrevious: Int = 0
-    private var contentHeight: Int = childOfContent.height
+    private val content: FrameLayout = act.findViewById(android.R.id.content)
+    private var childOfContent: View = content.getChildAt(0)
+    private val frameLayoutParams: FrameLayout.LayoutParams
+    private val contentHeight: Int = childOfContent.height
+    private val usableHeightSansKeyboard = childOfContent.rootView.height
 
     init {
         childOfContent = content.getChildAt(0)
@@ -26,7 +27,6 @@ class SoftHideKeyBoardUtil(act: Activity) {
         val statusBarHeight = r.top
         val usableHeightNow = r.bottom - r.top
         if (usableHeightNow != usableHeightPrevious) {
-            val usableHeightSansKeyboard = childOfContent.rootView.height
             val heightDifference = usableHeightSansKeyboard - usableHeightNow
             if (heightDifference > (usableHeightSansKeyboard / 4)) {
                 frameLayoutParams.height = usableHeightSansKeyboard - heightDifference + statusBarHeight

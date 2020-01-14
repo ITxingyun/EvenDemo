@@ -23,6 +23,6 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    fun obtainMainActivityViewModel() =
+    fun obtainViewModel() =
         activity?.let { ViewModelProviders.of(it).get(MainActivityViewModel::class.java) }
 }

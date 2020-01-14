@@ -1,6 +1,6 @@
 package com.xingyun.evendemo.rxjava
 
-import com.xingyun.evendemo.retrofit.RetrofitException
+import com.xingyun.evendemo.http.retrofit.RetrofitException
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 
