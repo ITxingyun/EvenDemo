@@ -1,5 +1,6 @@
 package com.xingyun.evendemo.framework
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.common.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentFrameWorkBinding
+import com.xingyun.evendemo.framework.lifecycle.LifecycleActivity
 import com.xingyun.evendemo.framework.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.framework.window.WindowFragment
 
@@ -33,6 +35,10 @@ class FrameWorkFragment : BaseFragment(),
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ProjectAdapter(fragments, this@FrameWorkFragment)
+        }
+        binding.btnActivityLifecycle.setOnClickListener {
+            val intent = Intent(context, LifecycleActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
+import com.xingyun.evendemo.common.BaseActivity
 import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.mvvm.EventObserver
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

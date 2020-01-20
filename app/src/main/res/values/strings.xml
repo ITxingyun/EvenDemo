@@ -11,4 +11,7 @@
     <string name="login_user_password_tip">请按照要求输入密码</string>
     <string name="login_success">登录成功</string>
 
+
+    <string name="frame_work_activity_lifecycle">Activity生命周期</string>
+
 </resources>
