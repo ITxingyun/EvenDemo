@@ -9,7 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.base.BaseFragment
+import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.FragmentPageAdapter
 import com.xingyun.evendemo.databinding.FragmentViewPageBinding
 import kotlin.math.abs
 
@@ -48,8 +49,9 @@ class ViewPage2Fragment : BaseFragment() {
             setPageTransformer(ViewPager2PageTransformation())
         }
 
+        val fragments = listOf(PageFragment(), PageFragment(), PageFragment(), PageFragment())
         binding.vpFragment.apply {
-            adapter = FragmentPageAdapter(this@ViewPage2Fragment)
+            adapter = FragmentPageAdapter(this@ViewPage2Fragment, fragments)
         }
         TabLayoutMediator(binding.tabLayout, binding.vpFragment) {tab,position ->
             tab.text = "Page ${(position + 1)}"

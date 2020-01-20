@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xingyun.evendemo.base.BaseFragment
+import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.databinding.FragmentLoginBinding
 

@@ -2,7 +2,7 @@ package com.xingyun.evendemo.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.xingyun.evendemo.base.BaseFragment
+import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.mvvm.Event
 
 class MainActivityViewModel: ViewModel() {

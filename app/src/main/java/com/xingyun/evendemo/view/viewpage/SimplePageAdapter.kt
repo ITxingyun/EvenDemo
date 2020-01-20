@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.BR
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.view.recyclerview.BaseAdapter
+import com.xingyun.evendemo.common.BaseAdapter
 import com.xingyun.evendemo.databinding.ItemViewPageBinding
 
 class SimplePageAdapter(private val pages: List<String>) : BaseAdapter<ItemViewPageBinding>() {

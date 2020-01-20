@@ -1,7 +1,7 @@
 package com.xingyun.evendemo.mvvm
 
-import com.xingyun.evendemo.http.retrofit.RetrofitException
-import com.xingyun.evendemo.rxjava.XYObserver
+import com.xingyun.evendemo.opensoruce.http.retrofit.RetrofitException
+import com.xingyun.evendemo.opensoruce.rxjava.XYObserver
 import io.reactivex.disposables.Disposable
 
 typealias Success<T> = (T) -> Unit

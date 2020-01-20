@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.base.BaseFragment
+import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.mvvm.EventObserver
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
     }
 
-    fun replaceFragment(fragment: BaseFragment, isAddToBackStack: Boolean = true) =
+    private fun replaceFragment(fragment: BaseFragment, isAddToBackStack: Boolean = true) =
         supportFragmentManager.beginTransaction()
             .apply {
                 if (isAddToBackStack) {

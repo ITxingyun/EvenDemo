@@ -5,7 +5,7 @@
 
         <variable
                 name="navigator"
-                type="com.xingyun.evendemo.fragment.lifecycle.Navigator" />
+                type="com.xingyun.evendemo.framework.lifecycle.Navigator" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

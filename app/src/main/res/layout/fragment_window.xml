@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.xingyun.evendemo.source.window.WindowViewModel" />
+            type="com.xingyun.evendemo.framework.window.WindowViewModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

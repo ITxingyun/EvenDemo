@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.xingyun.evendemo.mvvm.LoginFragment.Companion.LOGIN_SUCCESS
 import com.xingyun.evendemo.mvvm.LoginFragment.Companion.TEXT_EMPTY_PASSWORD
 import com.xingyun.evendemo.mvvm.LoginFragment.Companion.TEXT_EMPTY_USER_NAME
-import com.xingyun.evendemo.http.retrofit.WanAndroidServiceRetrofit
-import com.xingyun.evendemo.http.retrofit.applySchedulers
+import com.xingyun.evendemo.opensoruce.http.retrofit.WanAndroidServiceRetrofit
+import com.xingyun.evendemo.opensoruce.http.retrofit.applySchedulers
 import io.reactivex.disposables.CompositeDisposable
 
 class LoginViewModel : ViewModel() {
