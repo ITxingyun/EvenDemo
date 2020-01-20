@@ -27,6 +27,23 @@
         </activity>
 
         <activity android:name=".framework.lifecycle.LifecycleActivity" />
+        <activity android:name=".framework.launchmode.SingleInstanceActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".framework.launchmode.SingleTaskActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".framework.launchmode.SingleTopActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".framework.launchmode.StandardActivity" >
+            <intent-filter>
+                <action android:name="com.xingyun.android"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+              <!--  <data android:scheme="http"
+                    android:host="//www.google.com"
+                    android:port="8080"
+                    android:path="/search"
+                    android:pathPrefix="/info"/>-->
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

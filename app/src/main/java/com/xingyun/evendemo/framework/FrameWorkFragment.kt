@@ -11,7 +11,7 @@ import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.common.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentFrameWorkBinding
-import com.xingyun.evendemo.framework.lifecycle.LifecycleActivity
+import com.xingyun.evendemo.framework.launchmode.StandardActivity
 import com.xingyun.evendemo.framework.lifecycle.LifecycleFragment
 import com.xingyun.evendemo.framework.window.WindowFragment
 
@@ -37,7 +37,7 @@ class FrameWorkFragment : BaseFragment(),
             adapter = ProjectAdapter(fragments, this@FrameWorkFragment)
         }
         binding.btnActivityLifecycle.setOnClickListener {
-            val intent = Intent(context, LifecycleActivity::class.java)
+            val intent = Intent(context, StandardActivity::class.java)
             startActivity(intent)
         }
     }

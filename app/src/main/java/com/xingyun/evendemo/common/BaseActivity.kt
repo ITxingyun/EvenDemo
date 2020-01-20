@@ -5,11 +5,11 @@ import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-open class BaseActivity: AppCompatActivity() {
-    private val tag = javaClass.simpleName
+abstract class BaseActivity: AppCompatActivity() {
+    protected open val tag = javaClass.simpleName
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         Log.e(tag, "onCreate")
     }
 
@@ -41,6 +41,16 @@ open class BaseActivity: AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.e(tag, "onDestroy")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        Log.e(tag, "onSaveInstanceState")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.e(tag, "onRestoreInstanceState")
     }
 
 }
