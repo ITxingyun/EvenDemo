@@ -12,7 +12,6 @@ import com.xingyun.evendemo.common.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentAddBinding
 
 class AddFragment : BaseFragment() {
-    override fun getFragmentTag(): String = ""
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -24,18 +23,9 @@ class AddFragment : BaseFragment() {
         Log.e("AddFragment EvenDemo--->", "onCreate")
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("AddFragment EvenDemo--->", "onCreateView")
-        return DataBindingUtil.inflate<FragmentAddBinding>(
-            inflater,
-            R.layout.fragment_add,
-            container,
-            false
-        ).root
+        return DataBindingUtil.inflate<FragmentAddBinding>(inflater, R.layout.fragment_add, container, false).root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -13,7 +13,7 @@ import com.xingyun.evendemo.databinding.FragmentLifecycleBinding
 
 class LifecycleFragment : BaseFragment(), Navigator {
 
-    override fun getFragmentTag(): String = "Fragment Lifecycle"
+    override val toolbarTitle: String = "Fragment生命周期"
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -25,18 +25,11 @@ class LifecycleFragment : BaseFragment(), Navigator {
         Log.e("LifecycleFragment EvenDemo--->", "onCreate")
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("LifecycleFragment EvenDemo--->", "onCreateView")
-        return DataBindingUtil.inflate<FragmentLifecycleBinding>(
-            inflater,
-            R.layout.fragment_lifecycle,
-            container,
-            false
-        ).apply { navigator = this@LifecycleFragment }.root
+        return DataBindingUtil.inflate<FragmentLifecycleBinding>(inflater, R.layout.fragment_lifecycle, container, false).apply {
+            navigator = this@LifecycleFragment
+        }.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

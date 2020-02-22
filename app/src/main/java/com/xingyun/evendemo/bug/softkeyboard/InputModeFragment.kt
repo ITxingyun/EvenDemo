@@ -12,7 +12,7 @@ import com.xingyun.evendemo.databinding.FragmentInputModeBinding
 class InputModeFragment : BaseFragment() {
     private lateinit var binding: FragmentInputModeBinding
 
-    override fun getFragmentTag(): String = "InputModeFragment"
+    override val toolbarTitle: String = "软键盘遮挡输入框问题"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentInputModeBinding>(inflater, R.layout.fragment_input_mode, container, false)

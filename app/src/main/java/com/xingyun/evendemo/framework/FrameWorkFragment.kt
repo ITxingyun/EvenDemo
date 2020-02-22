@@ -19,7 +19,7 @@ class FrameWorkFragment : BaseFragment(),
         ProjectAdapter.OnViewItemClickListener {
     private lateinit var binding: FragmentFrameWorkBinding
 
-    override fun getFragmentTag(): String = "View"
+    override val toolbarTitle: String = "源码分析"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentFrameWorkBinding>(inflater, R.layout.fragment_frame_work, container, false)

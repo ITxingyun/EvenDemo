@@ -13,8 +13,6 @@ import com.xingyun.evendemo.databinding.FragmentReplaceBinding
 
 class ReplaceFragment : BaseFragment() {
 
-    override fun getFragmentTag(): String = ""
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         Log.e("ReplaceFragment EvenDemo--->", "onAttach")
@@ -25,18 +23,9 @@ class ReplaceFragment : BaseFragment() {
         Log.e("ReplaceFragment EvenDemo--->", "onCreate")
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("ReplaceFragment EvenDemo--->", "onCreateView")
-        return DataBindingUtil.inflate<FragmentReplaceBinding>(
-            inflater,
-            R.layout.fragment_replace,
-            container,
-            false
-        ).root
+        return DataBindingUtil.inflate<FragmentReplaceBinding>(inflater, R.layout.fragment_replace, container, false).root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

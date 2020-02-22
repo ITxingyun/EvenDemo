@@ -11,8 +11,7 @@ import com.xingyun.evendemo.databinding.FragmentWithoutCollapsingToolbarBinding
 import com.xingyun.evendemo.utils.SoftHideKeyBoardUtil
 
 class WithoutCollapsingToolbarFragment : BaseFragment() {
-
-    override fun getFragmentTag(): String = "WithoutCollapsingToolbarFragment"
+    override val hasToolbar: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentWithoutCollapsingToolbarBinding>(inflater, R.layout.fragment_without_collapsing_toolbar, container, false)

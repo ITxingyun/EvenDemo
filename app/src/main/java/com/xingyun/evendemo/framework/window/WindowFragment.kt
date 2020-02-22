@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat
 class WindowFragment : BaseFragment() {
     private lateinit var binding: FragmentWindowBinding
 
-    override fun getFragmentTag(): String = "WindowFragment"
+    override val toolbarTitle: String = "Windows"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentWindowBinding>(inflater, com.xingyun.evendemo.R.layout.fragment_window, container, false)

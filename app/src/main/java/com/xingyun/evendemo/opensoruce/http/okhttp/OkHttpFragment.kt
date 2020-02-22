@@ -14,7 +14,7 @@ class OkHttpFragment : BaseFragment() {
     private lateinit var binding: FragmentOkhttpBinding
     private val httpClient: OkHttpClient = OkHttpClient.Builder().build()
 
-    override fun getFragmentTag(): String = "OkHttpFragment"
+    override val toolbarTitle: String = "OkHttp"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentOkhttpBinding>(inflater, com.xingyun.evendemo.R.layout.fragment_okhttp, container, false)

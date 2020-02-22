@@ -18,7 +18,7 @@ class ViewPage2Fragment : BaseFragment() {
     private lateinit var binding: FragmentViewPageBinding
     private lateinit var pageChangeCallback: ViewPager2.OnPageChangeCallback
 
-    override fun getFragmentTag(): String = "ViewPage2Fragment"
+    override val toolbarTitle: String = "ViewPager2"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentViewPageBinding>(inflater, R.layout.fragment_view_page, container, false)

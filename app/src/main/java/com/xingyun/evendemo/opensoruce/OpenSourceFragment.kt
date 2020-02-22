@@ -13,10 +13,10 @@ import com.xingyun.evendemo.databinding.FragmentOpenSourceBinding
 import com.xingyun.evendemo.opensoruce.http.okhttp.OkHttpFragment
 import com.xingyun.evendemo.opensoruce.image.picasso.PicassoFragment
 
-class OpenSourceFragment : BaseFragment(),
-        ProjectAdapter.OnViewItemClickListener {
+class OpenSourceFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
     private lateinit var binding: FragmentOpenSourceBinding
-    override fun getFragmentTag(): String = "Bug"
+
+    override val toolbarTitle: String = "开源框架"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentOpenSourceBinding>(inflater, R.layout.fragment_open_source, container, false)
@@ -25,7 +25,7 @@ class OpenSourceFragment : BaseFragment(),
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val fragments= listOf(
+        val fragments = listOf(
                 OkHttpFragment(),
                 PicassoFragment()
         )

@@ -7,17 +7,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp_main_page"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:title="@string/app_name"
+            android:elevation="3dp" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_view"
+            style="@style/ButtonLrgPrimary"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:tabTextAppearance="@style/TabLayoutStyle"/>
+            android:layout_marginTop="50dp"
+            android:text="@string/tab_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_bug"
+            style="@style/ButtonLrgPrimary"
+            android:layout_width="match_parent"
+            android:text="@string/tab_bug" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_frame_work"
+            style="@style/ButtonLrgPrimary"
+            android:layout_width="match_parent"
+            android:text="@string/tab_frame_work" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_open_source"
+            style="@style/ButtonLrgPrimary"
+            android:layout_width="match_parent"
+            android:text="@string/tab_open_source" />
+
 
     </LinearLayout>
 </layout>

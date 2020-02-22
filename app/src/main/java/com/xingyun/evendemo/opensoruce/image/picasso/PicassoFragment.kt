@@ -13,7 +13,7 @@ import com.xingyun.evendemo.databinding.FragmentPicassoBinding
 class PicassoFragment : BaseFragment() {
     private lateinit var binding: FragmentPicassoBinding
 
-    override fun getFragmentTag(): String = "Picasso Sound Code"
+    override val toolbarTitle: String = "Picasso"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         DataBindingUtil.inflate<FragmentPicassoBinding>(inflater, R.layout.fragment_picasso, container, false)

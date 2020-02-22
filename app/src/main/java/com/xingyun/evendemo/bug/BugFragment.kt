@@ -15,7 +15,8 @@ import com.xingyun.evendemo.databinding.FragmentBugBinding
 class BugFragment : BaseFragment(),
         ProjectAdapter.OnViewItemClickListener {
     private lateinit var binding: FragmentBugBinding
-    override fun getFragmentTag(): String = "Bug"
+
+    override val toolbarTitle: String = "Bug收集处"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             DataBindingUtil.inflate<FragmentBugBinding>(inflater, R.layout.fragment_bug, container, false)
@@ -24,7 +25,7 @@ class BugFragment : BaseFragment(),
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val fragments= listOf(
+        val fragments = listOf(
                 InputModeFragment()
         )
         binding.recyclerView.apply {

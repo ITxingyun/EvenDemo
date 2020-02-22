@@ -30,7 +30,7 @@ class ProjectAdapter(
         fun onItemClick(fragment: BaseFragment)
     }
 
-    class HomePager : RecyclerView.ItemDecoration() {
+    class ProjectItemDecoration : RecyclerView.ItemDecoration() {
 
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
 
