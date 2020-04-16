@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentLoginBinding
 
 class LoginFragment : BaseFragment() {

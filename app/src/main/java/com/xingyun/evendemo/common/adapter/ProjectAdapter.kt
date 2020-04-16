@@ -1,12 +1,10 @@
-package com.xingyun.evendemo.common
+package com.xingyun.evendemo.common.adapter
 
 import android.graphics.Rect
-import androidx.databinding.DataBindingUtil
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xingyun.evendemo.R
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ItemProjectBinding
 
 class ProjectAdapter(
@@ -16,9 +14,9 @@ class ProjectAdapter(
 
     override fun getLayoutRes(): Int = R.layout.item_project
 
-    override fun onCreateView(inflater: LayoutInflater, layoutId: Int, parent: ViewGroup, attachToParent: Boolean): ItemProjectBinding =
-            DataBindingUtil.inflate<ItemProjectBinding>(inflater, layoutId, parent, attachToParent)
-                    .apply { listener = onViewItemClickListener }
+    override fun onDataBindingCreated(viewDataBinding: ItemProjectBinding) {
+        viewDataBinding.listener = onViewItemClickListener
+    }
 
     override fun onBind(viewDataBinding: ItemProjectBinding, position: Int) {
         viewDataBinding.fragment = fragments[position]

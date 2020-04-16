@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.BaseFragment
-import com.xingyun.evendemo.common.ProjectAdapter
+import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentViewBinding
 import com.xingyun.evendemo.view.menu.MenuFragment
 import com.xingyun.evendemo.view.recyclerview.RecyclerViewFragment
@@ -36,7 +36,8 @@ class ViewFragment : BaseFragment(),
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ProjectAdapter(fragments, this@ViewFragment)
+            adapter =
+                ProjectAdapter(fragments, this@ViewFragment)
         }
     }
 

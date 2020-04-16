@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.mvvm.Event
 
 class MainActivityViewModel : ViewModel() {

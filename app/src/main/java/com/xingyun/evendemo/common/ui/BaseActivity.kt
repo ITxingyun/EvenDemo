@@ -1,4 +1,4 @@
-package com.xingyun.evendemo.common
+package com.xingyun.evendemo.common.ui
 
 import android.os.Bundle
 import android.os.PersistableBundle

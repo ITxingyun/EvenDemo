@@ -3,15 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item
-        android:id="@+id/menu_news"
-        android:title="@null"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/menu_news"-->
+<!--        android:title="@null"-->
+<!--        android:icon="@drawable/ic_notifications_black_24dp"-->
+<!--        app:showAsAction="ifRoom" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/menu_search"-->
+<!--        android:title="@string/menu_search"-->
+<!--        app:showAsAction="ifRoom" />-->
 
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/menu_search_layout"
+        android:orderInCategory="9999"
         android:title="@string/menu_search"
-        app:showAsAction="always" />
+        android:icon="@drawable/ic_search"
+        app:actionViewClass="com.xingyun.evendemo.view.searchview.TransactionalSearchView"
+        app:showAsAction="always|collapseActionView" />
 
 </menu>

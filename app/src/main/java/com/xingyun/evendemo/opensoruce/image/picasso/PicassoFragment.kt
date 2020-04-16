@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
-import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.databinding.FragmentPicassoBinding
 

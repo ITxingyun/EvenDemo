@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.BaseFragment
-import com.xingyun.evendemo.common.ProjectAdapter
+import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentOpenSourceBinding
 import com.xingyun.evendemo.opensoruce.http.okhttp.OkHttpFragment
 import com.xingyun.evendemo.opensoruce.image.picasso.PicassoFragment
@@ -31,7 +31,10 @@ class OpenSourceFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListene
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ProjectAdapter(fragments, this@OpenSourceFragment)
+            adapter = ProjectAdapter(
+                fragments,
+                this@OpenSourceFragment
+            )
         }
     }
 

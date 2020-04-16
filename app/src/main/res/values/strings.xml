@@ -11,6 +11,9 @@
 
     <!--View-->
     <string name="tab_view">View</string>
+    <!--RecyclerView-->
+    <string name="recycler_view_simple">简单的LinearLayoutManager布局</string>
+    <string name="recycler_view_multiple_view_type">多ViewType LinearLayoutManager布局</string>
 
     <!--View-->
     <string name="tab_bug">Bug</string>

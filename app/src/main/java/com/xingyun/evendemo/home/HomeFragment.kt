@@ -2,12 +2,10 @@ package com.xingyun.evendemo.home
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.bug.BugFragment
-import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
 import com.xingyun.evendemo.framework.FrameWorkFragment
 import com.xingyun.evendemo.opensoruce.OpenSourceFragment

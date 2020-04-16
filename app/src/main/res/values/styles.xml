@@ -32,6 +32,8 @@
         <item name="layout">@layout/layout_search_view</item>
         <item name="android:searchIcon">@null</item>
         <item name="android:maxWidth">1000dp</item>
+        <item name="goIcon">@drawable/ic_notifications_black_24dp</item>
+        <item name="voiceIcon">@drawable/abc_ic_voice_search_api_material</item>
     </style>
 
 </resources>

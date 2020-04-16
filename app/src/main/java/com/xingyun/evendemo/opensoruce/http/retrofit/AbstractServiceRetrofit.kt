@@ -25,11 +25,6 @@ abstract class AbstractServiceRetrofit {
             connectTimeout(CONNECTION_TIME_OUT, TimeUnit.MILLISECONDS)
             readTimeout(CONNECTION_TIME_OUT, TimeUnit.MILLISECONDS)
             addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.HEADERS })
-            addInterceptor { chain ->
-                val requestBuilder = chain.request().newBuilder()
-                //do something for Header or Parameter ...
-                chain.proceed(requestBuilder.build())
-            }
         }.build()
 
     protected fun <T> createService(serviceClass: Class<T>): T {

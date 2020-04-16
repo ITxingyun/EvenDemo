@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.bug.softkeyboard.InputModeFragment
-import com.xingyun.evendemo.common.BaseFragment
-import com.xingyun.evendemo.common.ProjectAdapter
+import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentBugBinding
 
 class BugFragment : BaseFragment(),
@@ -30,7 +30,8 @@ class BugFragment : BaseFragment(),
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ProjectAdapter(fragments, this@BugFragment)
+            adapter =
+                ProjectAdapter(fragments, this@BugFragment)
         }
     }
 

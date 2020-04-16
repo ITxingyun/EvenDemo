@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/search_bar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,9 +11,9 @@
         android:id="@+id/search_badge"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
         android:layout_marginBottom="2dip"
         android:drawablePadding="0dip"
+        android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="?android:attr/textColorPrimary"
         android:visibility="gone" />
@@ -23,93 +24,99 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
+        android:contentDescription="@string/abc_searchview_description_search"
         android:focusable="true"
-        android:contentDescription="@string/abc_searchview_description_search" />
+        tools:src="@drawable/abc_ic_commit_search_api_mtrl_alpha" />
 
     <LinearLayout
         android:id="@+id/search_edit_frame"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layoutDirection="locale">
+        android:layoutDirection="locale"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/search_mag_icon"
             android:layout_width="@dimen/abc_dropdownitem_icon_width"
             android:layout_height="wrap_content"
-            android:scaleType="centerInside"
             android:layout_gravity="center_vertical"
-            android:visibility="gone" />
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            tools:src="@drawable/ic_search" />
 
         <!-- Inner layout contains the app icon, button(s) and EditText -->
         <LinearLayout
             android:id="@+id/search_plate"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <view class="androidx.appcompat.widget.SearchView$SearchAutoComplete"
+            <view
                 android:id="@+id/search_src_text"
-                android:layout_height="36dip"
+                class="androidx.appcompat.widget.SearchView$SearchAutoComplete"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_height="36dip"
                 android:layout_gravity="center_vertical"
-                android:singleLine="true"
-                android:ellipsize="end"
+                android:layout_weight="1"
                 android:background="@null"
-                android:textColor="@color/white"
-                android:inputType="text|textAutoComplete|textNoSuggestions"
-                android:imeOptions="actionSearch"
-                android:dropDownHeight="wrap_content"
                 android:dropDownAnchor="@id/search_edit_frame"
+                android:dropDownHeight="wrap_content"
+                android:dropDownHorizontalOffset="0dip"
                 android:dropDownVerticalOffset="0dip"
-                android:dropDownHorizontalOffset="0dip" />
+                android:ellipsize="end"
+                android:imeOptions="actionSearch"
+                android:inputType="text|textAutoComplete|textNoSuggestions"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                tools:text="searchTest" />
 
             <ImageView
                 android:id="@+id/search_close_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="8dip"
-                android:paddingRight="8dip"
                 android:layout_gravity="center_vertical"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/abc_searchview_description_clear"
                 android:focusable="true"
-                android:contentDescription="@string/abc_searchview_description_clear" />
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/submit_area"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/search_go_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/abc_searchview_description_submit"
+                android:focusable="true"
                 android:paddingLeft="16dip"
                 android:paddingRight="16dip"
-                android:background="?attr/selectableItemBackgroundBorderless"
                 android:visibility="gone"
-                android:focusable="true"
-                android:contentDescription="@string/abc_searchview_description_submit" />
+                tools:src="@drawable/abc_ic_go_search_api_material" />
 
             <ImageView
                 android:id="@+id/search_voice_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/abc_searchview_description_voice"
+                android:focusable="true"
                 android:paddingLeft="16dip"
                 android:paddingRight="16dip"
-                android:background="?attr/selectableItemBackgroundBorderless"
                 android:visibility="gone"
-                android:focusable="true"
-                android:contentDescription="@string/abc_searchview_description_voice" />
+                tools:src="@drawable/abc_ic_voice_search_api_material" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

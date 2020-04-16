@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.BaseFragment
+import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentMenuBinding
+import com.xingyun.evendemo.view.searchview.TransactionalSearchView
 
 class MenuFragment: BaseFragment() {
     private lateinit var binding: FragmentMenuBinding
@@ -19,19 +20,22 @@ class MenuFragment: BaseFragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_test, menu)
+        (menu.findItem(R.id.menu_search_layout).actionView as TransactionalSearchView).apply {
+
+        }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean =
-            when(item.itemId) {
-                R.id.menu_news -> {
-
-                    true
-                }
-                R.id.menu_search -> {
-
-                    true
-                }
-                else -> super.onOptionsItemSelected(item)
-            }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean =
+//            when(item.itemId) {
+//                R.id.menu_news -> {
+//
+//                    true
+//                }
+//                R.id.menu_search -> {
+//
+//                    true
+//                }
+//                else -> super.onOptionsItemSelected(item)
+//            }
 
 }

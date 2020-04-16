@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.BaseActivity
+import com.xingyun.evendemo.common.ui.BaseActivity
 import com.xingyun.evendemo.databinding.ActivitySingaleTopBinding
 
 class SingleTopActivity : BaseActivity() {
