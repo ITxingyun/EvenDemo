@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FilterFlowGroup">
+        <attr name="itemSpacing" format="dimension"/>
+        <attr name="lineSpacing" format="dimension"/>
+        <attr name="expandLine" format="dimension"/>
+    </declare-styleable>
+
+</resources>

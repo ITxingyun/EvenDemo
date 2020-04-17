@@ -32,4 +32,7 @@
     <!--menu-->
     <string name="menu_search">搜索</string>
 
+
+    <string name="registry_product_filter_option_more_view">+%d more</string>
+
 </resources>

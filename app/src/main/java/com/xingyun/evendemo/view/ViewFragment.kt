@@ -10,6 +10,7 @@ import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentViewBinding
+import com.xingyun.evendemo.view.custom.CustomViewFragment
 import com.xingyun.evendemo.view.menu.MenuFragment
 import com.xingyun.evendemo.view.recyclerview.RecyclerViewFragment
 import com.xingyun.evendemo.view.searchview.SearchViewFragment
@@ -32,12 +33,12 @@ class ViewFragment : BaseFragment(),
                 ViewPage2Fragment(),
                 MenuFragment(),
                 SearchViewFragment(),
-                RecyclerViewFragment()
+                RecyclerViewFragment(),
+                CustomViewFragment()
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter =
-                ProjectAdapter(fragments, this@ViewFragment)
+            adapter = ProjectAdapter(fragments, this@ViewFragment)
         }
     }
 
