@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.MarginLayoutParamsCompat
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.ViewCompat
 import com.google.android.material.chip.Chip
 import com.xingyun.evendemo.R
@@ -15,9 +15,11 @@ class FilterFlowGroup : ViewGroup {
     private var lineCount = 1
     private var expandLine = 0
 
-    private var isShowAllView = false
+    private var hasShowAllView = false
     private var visibleViewCount = 0
     private lateinit var moreView: Chip
+    private lateinit var clearText: AppCompatTextView
+    private var childList = mutableListOf<View>()
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -36,20 +38,30 @@ class FilterFlowGroup : ViewGroup {
             val array = context.obtainStyledAttributes(it, R.styleable.FilterFlowGroup, 0, 0)
             itemSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_itemSpacing, 0)
             lineSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_lineSpacing, 0)
-            expandLine = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_itemSpacing, 2)
+            expandLine = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_expandLine, 2)
             array.recycle()
         }
         moreView = Chip(context).apply {
             setBackgroundResource(R.color.white)
             setOnClickListener {
-                isShowAllView = !isShowAllView
-                requestLayout()
+                this@FilterFlowGroup.lineCount = 1
+                hasShowAllView = !hasShowAllView
+                text = "See Less"
+                relayout()
             }
+            text = "See Less"
         }
-
+        clearText = AppCompatTextView(context).apply {
+            text = "clear all"
+        }
         addView(moreView)
+        addView(clearText)
     }
 
+    private fun relayout() {
+        requestLayout()
+        invalidate()
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val width = MeasureSpec.getSize(widthMeasureSpec)
@@ -65,30 +77,26 @@ class FilterFlowGroup : ViewGroup {
         var childRight: Int
         var maxChildRight = 0
         val maxRight = maxWidth - paddingRight
+        var expandViewWidth = 0
 
         measureChild(moreView, widthMeasureSpec, heightMeasureSpec)
+        measureChild(clearText, widthMeasureSpec, heightMeasureSpec)
 
-        for (i in 1 until childCount) {
+        for (i in 2 until childCount) {
             val child = getChildAt(i)
             if (child.visibility == View.GONE) {
                 continue
             }
             measureChild(child, widthMeasureSpec, heightMeasureSpec)
-            val lp = child.layoutParams
-            var leftMargin = 0
-            var rightMargin = 0
-            if (lp is MarginLayoutParams) {
-                leftMargin += lp.leftMargin
-                rightMargin += lp.rightMargin
-            }
-            childRight = childLeft + leftMargin + child.measuredWidth
+            childRight = childLeft + child.measuredWidth
 
-
-            if (!isShowAllView && lineCount == expandLine) {
-                val moreViewWidth = getMoreViewWidth(childCount - i)
-                if (maxRight - moreViewWidth < childRight) {
+            if (!hasShowAllView && lineCount == expandLine) {
+                updateMoreViewText(i)
+                measureChild(moreView, widthMeasureSpec, heightMeasureSpec)
+                expandViewWidth = moreView.measuredWidth + itemSpacing + clearText.measuredWidth
+                if (maxRight - expandViewWidth < childRight) {
                     visibleViewCount = i
-                    maxChildRight += moreViewWidth
+                    maxChildRight += expandViewWidth
                     lineCount = 1
                     break
                 }
@@ -101,7 +109,7 @@ class FilterFlowGroup : ViewGroup {
                 lineCount++
             }
 
-            childRight = childLeft + leftMargin + child.measuredWidth
+            childRight = childLeft + child.measuredWidth
             childBottom = childTop + child.measuredHeight
 
             // Updates max right bound if current child's right bound exceeds it.
@@ -109,11 +117,11 @@ class FilterFlowGroup : ViewGroup {
                 maxChildRight = childRight
             }
 
-            childLeft += leftMargin + rightMargin + child.measuredWidth + itemSpacing
+            childLeft += child.measuredWidth + itemSpacing
+        }
 
-            if (i == childCount - 1) {
-                maxChildRight += rightMargin
-            }
+        if (hasShowAllView) {
+            maxChildRight += expandViewWidth
         }
 
         maxChildRight += paddingRight
@@ -132,55 +140,62 @@ class FilterFlowGroup : ViewGroup {
         }
     }
 
-    private fun getMoreViewWidth(hideCount: Int): Int {
-        moreView.text = context.getString(R.string.registry_product_filter_option_more_view, hideCount)
-        return moreView.measuredWidth
-    }
-
     override fun onLayout(sizeChanged: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-        val isRtl = ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL
-        val paddingStart = if (isRtl) paddingRight else paddingLeft
-        val paddingEnd = if (isRtl) paddingLeft else paddingRight
+        val paddingStart = paddingLeft
+        val paddingEnd = paddingRight
         var childStart = paddingStart
         var childTop = paddingTop
         var childBottom = childTop
-        var childEnd: Int
+        var childEnd = 0
 
         val maxChildEnd = right - left - paddingEnd
 
-        val shouldLayoutChildCount = if (isShowAllView) childCount else visibleViewCount
+        val shouldLayoutChildCount = if (hasShowAllView) childCount else visibleViewCount
 
-        for (i in 1 until shouldLayoutChildCount) {
+        for (i in 2 until shouldLayoutChildCount) {
             val child = getChildAt(i)
             if (child.visibility == View.GONE) {
                 continue
             }
-            val lp = child.layoutParams
-            var startMargin = 0
-            var endMargin = 0
-            if (lp is MarginLayoutParams) {
-                startMargin = MarginLayoutParamsCompat.getMarginStart(lp)
-                endMargin = MarginLayoutParamsCompat.getMarginEnd(lp)
-            }
-            childEnd = childStart + startMargin + child.measuredWidth
+
+            childEnd = childStart + child.measuredWidth
             if (childEnd > maxChildEnd) {
                 childStart = paddingStart
                 childTop = childBottom + lineSpacing
             }
-            childEnd = childStart + startMargin + child.measuredWidth
+            childEnd = childStart + child.measuredWidth
             childBottom = childTop + child.measuredHeight
 
-            if (isRtl) {
-                child.layout(maxChildEnd - childEnd, childTop, maxChildEnd - childStart - startMargin, childBottom)
-            } else {
-                child.layout(childStart + startMargin, childTop, childEnd, childBottom)
-            }
-            childStart += startMargin + endMargin + child.measuredWidth + itemSpacing
+            child.layout(childStart, childTop, childEnd, childBottom)
+            childStart += child.measuredWidth + itemSpacing
         }
 
-        if (!isShowAllView && visibleViewCount < childCount) {
+        if (hasShowAllView) {
+            childEnd += moreView.measuredWidth
+            if (childEnd > maxChildEnd) {
+                childStart = paddingStart
+                childTop = childBottom + lineSpacing
+            }
+            childEnd = childStart + moreView.measuredWidth + itemSpacing
+            moreView.layout(childStart, childTop, childEnd, childBottom)
+            childStart = childEnd + lineSpacing
+
+            childEnd += clearText.measuredWidth
+            if (childEnd > maxChildEnd) {
+                childStart = paddingStart
+                childTop = childBottom + lineSpacing
+            }
+            childEnd = childStart + clearText.measuredWidth
+            clearText.layout(childStart, childTop, childEnd, childBottom)
+        } else {
             moreView.layout(childStart, childTop, childStart + moreView.measuredWidth, childTop + moreView.measuredHeight)
+            childStart += moreView.measuredWidth + itemSpacing
+            clearText.layout(childStart, childTop, childStart + clearText.measuredWidth, childTop + moreView.measuredHeight)
         }
+    }
+
+    private fun updateMoreViewText(hideCount: Int) {
+        moreView.text = context.getString(R.string.registry_product_filter_option_more_view, hideCount)
     }
 
 }
