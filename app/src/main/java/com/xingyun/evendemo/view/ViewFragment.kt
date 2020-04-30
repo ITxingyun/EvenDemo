@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseFragment
-import com.xingyun.evendemo.common.adapter.ProjectAdapter
+import com.xingyun.library.base.ui.BaseFragment
+import com.xingyun.library.base.adapter.ProjectAdapter
 import com.xingyun.evendemo.databinding.FragmentViewBinding
 import com.xingyun.evendemo.view.custom.CustomViewFragment
 import com.xingyun.evendemo.view.menu.MenuFragment

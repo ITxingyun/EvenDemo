@@ -1,4 +1,4 @@
-package com.xingyun.evendemo.common.adapter
+package com.xingyun.library.base.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

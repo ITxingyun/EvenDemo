@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentCustomViewBinding
 
 class CustomViewFragment : BaseFragment() {

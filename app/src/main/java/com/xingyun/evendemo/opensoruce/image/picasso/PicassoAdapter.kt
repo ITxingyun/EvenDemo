@@ -1,7 +1,7 @@
 package com.xingyun.evendemo.opensoruce.image.picasso
 
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.adapter.BaseAdapter
+import com.xingyun.library.base.adapter.BaseAdapter
 import com.xingyun.evendemo.databinding.ItemPicassoBinding
 
 class PicassoAdapter(

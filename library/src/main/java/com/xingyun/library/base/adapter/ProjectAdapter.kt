@@ -1,10 +1,10 @@
-package com.xingyun.evendemo.common.adapter
+package com.xingyun.library.base.adapter
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ItemProjectBinding
 
 class ProjectAdapter(

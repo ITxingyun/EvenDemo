@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentMenuBinding
 import com.xingyun.evendemo.view.searchview.TransactionalSearchView
 

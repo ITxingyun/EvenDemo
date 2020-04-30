@@ -1,4 +1,4 @@
-package com.xingyun.evendemo.common.adapter
+package com.xingyun.library.base.adapter
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

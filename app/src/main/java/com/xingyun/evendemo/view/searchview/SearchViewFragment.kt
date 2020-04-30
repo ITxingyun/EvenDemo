@@ -5,7 +5,7 @@ import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentSearchViewBinding
 import com.xingyun.evendemo.view.recyclerview.RecyclerViewFragment
 

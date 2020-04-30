@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentViewPageBinding
 import kotlin.math.abs
 

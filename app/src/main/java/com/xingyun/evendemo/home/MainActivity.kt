@@ -5,8 +5,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseActivity
-import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.library.base.ui.BaseActivity
+import com.xingyun.library.base.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ActivityMainBinding
 import com.xingyun.evendemo.mvvm.EventObserver
 
