@@ -48,6 +48,8 @@
                       android:pathPrefix="/info"/>-->
             </intent-filter>
         </activity>
+
+        <activity android:name=".view.shareelement.ShareElementActivity"/>
     </application>
 
 </manifest>

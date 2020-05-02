@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.view.ViewCompat
 import com.google.android.material.chip.Chip
 import com.xingyun.evendemo.R
 
@@ -14,12 +13,14 @@ class FilterFlowGroup : ViewGroup {
     private var lineSpacing = 0
     private var lineCount = 1
     private var expandLine = 0
-
-    private var hasShowAllView = false
     private var visibleViewCount = 0
+    private var hasShowAllView = false
+    private var expandedString = ""
+    private var collapseString = ""
+    private var clearString = ""
     private lateinit var moreView: Chip
     private lateinit var clearText: AppCompatTextView
-    private var childList = mutableListOf<View>()
+
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -38,29 +39,35 @@ class FilterFlowGroup : ViewGroup {
             val array = context.obtainStyledAttributes(it, R.styleable.FilterFlowGroup, 0, 0)
             itemSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_itemSpacing, 0)
             lineSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_lineSpacing, 0)
-            expandLine = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_expandLine, 2)
+            expandLine = array.getInt(R.styleable.FilterFlowGroup_expandLine, 2)
+            collapseString = array.getString(R.styleable.FilterFlowGroup_collapseString) ?: ""
+            expandedString = array.getString(R.styleable.FilterFlowGroup_expandedString) ?: ""
+            clearString = array.getString(R.styleable.FilterFlowGroup_clearText) ?: ""
             array.recycle()
         }
         moreView = Chip(context).apply {
+            text = getMoreViewText()
             setBackgroundResource(R.color.white)
             setOnClickListener {
                 this@FilterFlowGroup.lineCount = 1
                 hasShowAllView = !hasShowAllView
-                text = "See Less"
-                relayout()
+                text = getMoreViewText()
+                invalidateAllView()
             }
-            text = "See Less"
         }
         clearText = AppCompatTextView(context).apply {
-            text = "clear all"
+            text = clearString
         }
         addView(moreView)
         addView(clearText)
     }
 
-    private fun relayout() {
-        requestLayout()
-        invalidate()
+    private fun getMoreViewText(): String {
+        return if (hasShowAllView) {
+            expandedString
+        } else {
+            String.format(collapseString, visibleViewCount)
+        }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -91,8 +98,6 @@ class FilterFlowGroup : ViewGroup {
             childRight = childLeft + child.measuredWidth
 
             if (!hasShowAllView && lineCount == expandLine) {
-                updateMoreViewText(i)
-                measureChild(moreView, widthMeasureSpec, heightMeasureSpec)
                 expandViewWidth = moreView.measuredWidth + itemSpacing + clearText.measuredWidth
                 if (maxRight - expandViewWidth < childRight) {
                     visibleViewCount = i
@@ -194,8 +199,12 @@ class FilterFlowGroup : ViewGroup {
         }
     }
 
-    private fun updateMoreViewText(hideCount: Int) {
-        moreView.text = context.getString(R.string.registry_product_filter_option_more_view, hideCount)
+    private fun invalidateAllView() {
+        requestLayout()
+        val visibility = if (hasShowAllView) View.VISIBLE else View.GONE
+        for (i in visibleViewCount until childCount) {
+            getChildAt(i).visibility = visibility
+        }
     }
 
 }

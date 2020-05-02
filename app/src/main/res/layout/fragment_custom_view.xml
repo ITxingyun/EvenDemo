@@ -10,8 +10,11 @@
         <com.xingyun.evendemo.view.custom.view.FilterFlowGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:padding="20dp"
             android:background="@color/coolgray_500"
+            app:clearText="Clear All"
+            app:expandedString="See Less"
+            app:collapseString="@string/registry_product_filter_option_more_view"
             app:lineSpacing="20dp"
             app:itemSpacing="20dp">
 
