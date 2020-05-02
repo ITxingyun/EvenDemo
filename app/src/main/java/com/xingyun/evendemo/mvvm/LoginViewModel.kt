@@ -23,8 +23,10 @@ class LoginViewModel : ViewModel() {
 
     fun login() {
         when {
-            userName.value.isNullOrEmpty() -> _loginResult.value = Event(TEXT_EMPTY_USER_NAME)
-            password.value.isNullOrEmpty() -> _loginResult.value = Event(TEXT_EMPTY_PASSWORD)
+            userName.value.isNullOrEmpty() -> _loginResult.value =
+                Event(TEXT_EMPTY_USER_NAME)
+            password.value.isNullOrEmpty() -> _loginResult.value =
+                Event(TEXT_EMPTY_PASSWORD)
             else -> {
                 wanAndroidServiceRetrofit.login(UserProfile(userName.value, password.value))
                     .flatMap {
@@ -36,7 +38,8 @@ class LoginViewModel : ViewModel() {
                             compositeDisposable.add(it)
                         }
                         success {
-                            _loginResult.value = Event(LOGIN_SUCCESS)
+                            _loginResult.value =
+                                Event(LOGIN_SUCCESS)
                         }
                     })
 

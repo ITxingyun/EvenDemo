@@ -12,12 +12,12 @@ typealias Complete = () -> Unit
 typealias LocalError = (Throwable) -> Unit
 
 class ObserverWrapper<T> private constructor(
-        private val success: Success<T>,
-        private val subscribed: Subscribed,
-        private val netWorkError: NetWorkError,
-        private val localError: LocalError,
-        private val finalAction: FinalAction,
-        private var complete: Complete
+    private val success: Success<T>,
+    private val subscribed: Subscribed,
+    private val netWorkError: NetWorkError,
+    private val localError: LocalError,
+    private val finalAction: FinalAction,
+    private var complete: Complete
 ) : XYObserver<T>() {
 
     override fun onSubscribe(disposable: Disposable) {
@@ -57,16 +57,17 @@ class ObserverWrapper<T> private constructor(
     }
 
     companion object {
-        fun <T> create(block: ObserverBuilder<T>.() -> Unit) = ObserverBuilder<T>().apply(block).create()
+        fun <T> create(block: ObserverBuilder<T>.() -> Unit) = ObserverBuilder<T>()
+            .apply(block).create()
     }
 
     class ObserverBuilder<T>(
-            private var success: Success<T> = {},
-            private var subscribed: Subscribed = {},
-            private var netWorkError: NetWorkError = {},
-            private var localError: LocalError = {},
-            private var finalAction: FinalAction = {},
-            private var complete: Complete = {}
+        private var success: Success<T> = {},
+        private var subscribed: Subscribed = {},
+        private var netWorkError: NetWorkError = {},
+        private var localError: LocalError = {},
+        private var finalAction: FinalAction = {},
+        private var complete: Complete = {}
     ) {
 
         fun success(success: Success<T>) = apply { this.success = success }
@@ -76,7 +77,14 @@ class ObserverWrapper<T> private constructor(
         fun onFinal(onFinal: FinalAction) = apply { this.finalAction = onFinal }
         fun onComplete(onComplete: Complete) = apply { this.complete = onComplete }
 
-        fun create() = ObserverWrapper(success, subscribed, netWorkError, localError, finalAction, complete)
+        fun create() = ObserverWrapper(
+            success,
+            subscribed,
+            netWorkError,
+            localError,
+            finalAction,
+            complete
+        )
     }
 }
 

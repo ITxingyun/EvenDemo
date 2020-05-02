@@ -40,17 +40,20 @@ class MainActivity : BaseActivity() {
                     supportActionBar?.title = it
                 })
 
-                addFragment.observe(this@MainActivity, EventObserver {
-                    addFragment(it)
-                })
+                addFragment.observe(this@MainActivity,
+                    EventObserver {
+                        addFragment(it)
+                    })
 
-                replaceFragment.observe(this@MainActivity, EventObserver {
-                    replaceFragment(it)
-                })
+                replaceFragment.observe(this@MainActivity,
+                    EventObserver {
+                        replaceFragment(it)
+                    })
 
-                backToPreviousPage.observe(this@MainActivity, EventObserver {
-                    onBackPressed()
-                })
+                backToPreviousPage.observe(this@MainActivity,
+                    EventObserver {
+                        onBackPressed()
+                    })
             }
         setSupportActionBar(binding.toolbar)
     }

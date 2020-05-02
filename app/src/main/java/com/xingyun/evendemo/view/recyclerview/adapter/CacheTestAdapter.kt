@@ -10,7 +10,6 @@ import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.adapter.BaseAdapter
 import com.xingyun.evendemo.common.adapter.BaseViewHolder
 import com.xingyun.evendemo.databinding.ItemCacheTestBinding
-import com.xingyun.evendemo.databinding.ItemSimpleTextBinding
 
 class CacheTestAdapter: BaseAdapter<ItemCacheTestBinding>() {
 

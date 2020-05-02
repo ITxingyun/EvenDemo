@@ -8,8 +8,8 @@ import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ItemProjectBinding
 
 class ProjectAdapter(
-        private val fragments: List<BaseFragment>,
-        private val onViewItemClickListener: OnViewItemClickListener
+    private val fragments: List<BaseFragment>,
+    private val onViewItemClickListener: OnViewItemClickListener
 ) : BaseAdapter<ItemProjectBinding>() {
 
     override fun getLayoutRes(): Int = R.layout.item_project

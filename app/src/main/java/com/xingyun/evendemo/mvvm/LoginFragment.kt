@@ -19,16 +19,17 @@ class LoginFragment : BaseFragment() {
         ViewModelProviders.of(this).get(LoginViewModel::class.java)
             .also { viewModel = it }
             .run {
-                loginResult.observe(this@LoginFragment, EventObserver{
-                    when(it) {
-                        TEXT_EMPTY_USER_NAME ->
-                            showMessage(getString(R.string.login_user_name_error_tip))
-                        TEXT_EMPTY_PASSWORD ->
-                            showMessage(getString(R.string.login_user_password_tip))
-                        LOGIN_SUCCESS ->
-                            showMessage(getString(R.string.login_success))
-                    }
-                })
+                loginResult.observe(this@LoginFragment,
+                    EventObserver {
+                        when (it) {
+                            TEXT_EMPTY_USER_NAME ->
+                                showMessage(getString(R.string.login_user_name_error_tip))
+                            TEXT_EMPTY_PASSWORD ->
+                                showMessage(getString(R.string.login_user_password_tip))
+                            LOGIN_SUCCESS ->
+                                showMessage(getString(R.string.login_success))
+                        }
+                    })
             }
     }
 
