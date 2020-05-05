@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ItemProjectBinding
+import com.xingyun.library.base.BaseAdapter
 
 class ProjectAdapter(
     private val fragments: List<BaseFragment>,

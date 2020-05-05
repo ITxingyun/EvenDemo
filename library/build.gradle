@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 26
@@ -16,6 +16,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     buildTypes {
@@ -35,10 +39,16 @@ dependencies {
     api 'com.google.android.material:material:1.2.0-alpha06'
     api "androidx.viewpager2:viewpager2:1.0.0"
 
+    //kotlin
+    api "androidx.core:core-ktx:1.2.0"
+    api "androidx.fragment:fragment-ktx:1.2.4"
+
     //lifecycle
-    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    def lifecycle_version = "2.2.0"
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     api 'com.squareup.picasso:picasso:2.71828'
     api "com.squareup.moshi:moshi:1.8.0"

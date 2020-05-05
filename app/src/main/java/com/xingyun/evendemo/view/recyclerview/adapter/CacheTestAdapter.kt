@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.adapter.BaseAdapter
-import com.xingyun.evendemo.common.adapter.BaseViewHolder
+import com.xingyun.library.base.BaseAdapter
+import com.xingyun.library.base.BaseViewHolder
 import com.xingyun.evendemo.databinding.ItemCacheTestBinding
 
 class CacheTestAdapter(private val listener: OnClickListener): BaseAdapter<ItemCacheTestBinding>() {

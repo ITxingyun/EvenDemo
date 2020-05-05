@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.xingyun.evendemo.common.ui.BaseFragment
-import com.xingyun.evendemo.mvvm.Event
+import com.xingyun.library.mvvm.Event
 
 class MainActivityViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>().apply { value = false }

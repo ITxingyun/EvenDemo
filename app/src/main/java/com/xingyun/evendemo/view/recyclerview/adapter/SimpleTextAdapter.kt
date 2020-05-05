@@ -1,7 +1,7 @@
 package com.xingyun.evendemo.view.recyclerview.adapter
 
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.adapter.BaseAdapter
+import com.xingyun.library.base.BaseAdapter
 import com.xingyun.evendemo.databinding.ItemSimpleTextBinding
 
 class SimpleTextAdapter(private val data: List<String>): BaseAdapter<ItemSimpleTextBinding>() {

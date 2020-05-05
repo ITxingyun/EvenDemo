@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
-import com.xingyun.evendemo.common.ui.BaseActivity
+import com.xingyun.library.base.BaseActivity
 import com.xingyun.evendemo.databinding.ActivitySingaleInstanceBinding
 
 class SingleInstanceActivity : BaseActivity() {
