@@ -4,8 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
-import com.google.android.material.chip.Chip
 import com.xingyun.evendemo.R
 
 class FilterFlowGroup : ViewGroup {
@@ -13,14 +11,8 @@ class FilterFlowGroup : ViewGroup {
     private var lineSpacing = 0
     private var lineCount = 1
     private var expandLine = 0
-    private var visibleViewCount = 0
-    private var hasShowAllView = false
-    private var expandedString = ""
-    private var collapseString = ""
-    private var clearString = ""
-    private lateinit var moreView: Chip
-    private lateinit var clearText: AppCompatTextView
 
+    private var adapter : FilterFlowAdapter? = null
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -40,101 +32,81 @@ class FilterFlowGroup : ViewGroup {
             itemSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_itemSpacing, 0)
             lineSpacing = array.getDimensionPixelSize(R.styleable.FilterFlowGroup_lineSpacing, 0)
             expandLine = array.getInt(R.styleable.FilterFlowGroup_expandLine, 2)
-            collapseString = array.getString(R.styleable.FilterFlowGroup_collapseString) ?: ""
-            expandedString = array.getString(R.styleable.FilterFlowGroup_expandedString) ?: ""
-            clearString = array.getString(R.styleable.FilterFlowGroup_clearText) ?: ""
             array.recycle()
         }
-        moreView = Chip(context).apply {
-            text = getMoreViewText()
-            setBackgroundResource(R.color.white)
-            setOnClickListener {
-                this@FilterFlowGroup.lineCount = 1
-                hasShowAllView = !hasShowAllView
-                text = getMoreViewText()
-                invalidateAllView()
-            }
-        }
-        clearText = AppCompatTextView(context).apply {
-            text = clearString
-        }
-        addView(moreView)
-        addView(clearText)
+
     }
 
-    private fun getMoreViewText(): String {
-        return if (hasShowAllView) {
-            expandedString
-        } else {
-            String.format(collapseString, visibleViewCount)
-        }
+    fun setAdapter(adapter: FilterFlowAdapter) {
+        this.adapter = adapter
+
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val width = MeasureSpec.getSize(widthMeasureSpec)
-        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+        adapter?.run {
+            val width = MeasureSpec.getSize(widthMeasureSpec)
+            val widthMode = MeasureSpec.getMode(widthMeasureSpec)
 
-        val height = MeasureSpec.getSize(heightMeasureSpec)
-        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+            val height = MeasureSpec.getSize(heightMeasureSpec)
+            val heightMode = MeasureSpec.getMode(heightMeasureSpec)
 
-        val maxWidth = if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.EXACTLY) width else Int.MAX_VALUE
-        var childLeft = paddingLeft
-        var childTop = paddingTop
-        var childBottom = childTop
-        var childRight: Int
-        var maxChildRight = 0
-        val maxRight = maxWidth - paddingRight
-        var expandViewWidth = 0
+            val maxWidth = if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.EXACTLY) width else Int.MAX_VALUE
+            var childLeft = paddingLeft
+            var childTop = paddingTop
+            var childBottom = childTop
+            var childRight: Int
+            var maxChildRight = 0
+            val maxRight = maxWidth - paddingRight
 
-        measureChild(moreView, widthMeasureSpec, heightMeasureSpec)
-        measureChild(clearText, widthMeasureSpec, heightMeasureSpec)
+            val itemCount = getItemCount()
+            val expandView = getExpandView(this@FilterFlowGroup)
+            val clearAllView = getClearAllView(this@FilterFlowGroup)
+            measureChild(expandView, widthMeasureSpec, heightMeasureSpec)
+            measureChild(clearAllView, widthMeasureSpec, heightMeasureSpec)
 
-        for (i in 2 until childCount) {
-            val child = getChildAt(i)
-            if (child.visibility == View.GONE) {
-                continue
-            }
-            measureChild(child, widthMeasureSpec, heightMeasureSpec)
-            childRight = childLeft + child.measuredWidth
-
-            if (!hasShowAllView && lineCount == expandLine) {
-                expandViewWidth = moreView.measuredWidth + itemSpacing + clearText.measuredWidth
-                if (maxRight - expandViewWidth < childRight) {
-                    visibleViewCount = i
-                    maxChildRight += expandViewWidth
-                    lineCount = 1
-                    break
+            for (i in 0 until itemCount) {
+                val child = getView(i, this@FilterFlowGroup)
+                if (child.visibility == View.GONE) {
+                    continue
                 }
+                measureChild(child, widthMeasureSpec, heightMeasureSpec)
+                childRight = childLeft + child.measuredWidth
+
+                if (!hasExpanded && lineCount == expandLine) {
+                    val expandViewWidth = expandView.measuredWidth + itemSpacing + clearAllView.measuredWidth
+                    if (maxRight - expandViewWidth < childRight) {
+                        maxChildRight += expandViewWidth
+                        lineCount = 1
+                        expandViewPosition = i
+                        break
+                    }
+                }
+
+                //child layout on next line
+                if (childRight > maxRight) {
+                    childLeft = paddingLeft
+                    childTop = childBottom + lineSpacing
+                    lineCount++
+                }
+
+                childRight = childLeft + child.measuredWidth
+                childBottom = childTop + child.measuredHeight
+
+                // Updates max right bound if current child's right bound exceeds it.
+                if (childRight > maxChildRight) {
+                    maxChildRight = childRight
+                }
+
+                childLeft += child.measuredWidth + itemSpacing
             }
 
-            //child layout on next line
-            if (childRight > maxRight) {
-                childLeft = paddingLeft
-                childTop = childBottom + lineSpacing
-                lineCount++
-            }
+            maxChildRight += paddingRight
+            childBottom += paddingBottom
 
-            childRight = childLeft + child.measuredWidth
-            childBottom = childTop + child.measuredHeight
-
-            // Updates max right bound if current child's right bound exceeds it.
-            if (childRight > maxChildRight) {
-                maxChildRight = childRight
-            }
-
-            childLeft += child.measuredWidth + itemSpacing
+            val finalWidth = getMeasuredDimension(width, widthMode, maxChildRight)
+            val finalHeight = getMeasuredDimension(height, heightMode, childBottom)
+            setMeasuredDimension(finalWidth, finalHeight)
         }
-
-        if (hasShowAllView) {
-            maxChildRight += expandViewWidth
-        }
-
-        maxChildRight += paddingRight
-        childBottom += paddingBottom
-
-        val finalWidth = getMeasuredDimension(width, widthMode, maxChildRight)
-        val finalHeight = getMeasuredDimension(height, heightMode, childBottom)
-        setMeasuredDimension(finalWidth, finalHeight)
     }
 
     private fun getMeasuredDimension(size: Int, mode: Int, childrenEdge: Int): Int {
@@ -151,13 +123,11 @@ class FilterFlowGroup : ViewGroup {
         var childStart = paddingStart
         var childTop = paddingTop
         var childBottom = childTop
-        var childEnd = 0
+        var childEnd: Int
 
         val maxChildEnd = right - left - paddingEnd
 
-        val shouldLayoutChildCount = if (hasShowAllView) childCount else visibleViewCount
-
-        for (i in 2 until shouldLayoutChildCount) {
+        for (i in 0 until childCount) {
             val child = getChildAt(i)
             if (child.visibility == View.GONE) {
                 continue
@@ -173,37 +143,6 @@ class FilterFlowGroup : ViewGroup {
 
             child.layout(childStart, childTop, childEnd, childBottom)
             childStart += child.measuredWidth + itemSpacing
-        }
-
-        if (hasShowAllView) {
-            childEnd += moreView.measuredWidth
-            if (childEnd > maxChildEnd) {
-                childStart = paddingStart
-                childTop = childBottom + lineSpacing
-            }
-            childEnd = childStart + moreView.measuredWidth + itemSpacing
-            moreView.layout(childStart, childTop, childEnd, childBottom)
-            childStart = childEnd + lineSpacing
-
-            childEnd += clearText.measuredWidth
-            if (childEnd > maxChildEnd) {
-                childStart = paddingStart
-                childTop = childBottom + lineSpacing
-            }
-            childEnd = childStart + clearText.measuredWidth
-            clearText.layout(childStart, childTop, childEnd, childBottom)
-        } else {
-            moreView.layout(childStart, childTop, childStart + moreView.measuredWidth, childTop + moreView.measuredHeight)
-            childStart += moreView.measuredWidth + itemSpacing
-            clearText.layout(childStart, childTop, childStart + clearText.measuredWidth, childTop + moreView.measuredHeight)
-        }
-    }
-
-    private fun invalidateAllView() {
-        requestLayout()
-        val visibility = if (hasShowAllView) View.VISIBLE else View.GONE
-        for (i in visibleViewCount until childCount) {
-            getChildAt(i).visibility = visibility
         }
     }
 

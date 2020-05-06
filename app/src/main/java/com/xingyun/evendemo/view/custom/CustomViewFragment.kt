@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentCustomViewBinding
+import com.xingyun.evendemo.view.custom.view.FilterFlowAdapter
 
 class CustomViewFragment : BaseFragment() {
     private lateinit var binding: FragmentCustomViewBinding
@@ -17,5 +18,12 @@ class CustomViewFragment : BaseFragment() {
                     .also { binding = it }
                     .root
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.filter.setAdapter(FilterFlowAdapter(listOf(
+                "aaaaaa", "bbbbbbbbbb", "cccccc", "ddddd" ,"eeeeee", "fffff",
+                "hhhhhhhhhhhhhh", "iiiiiiiiiiiii"
+        )))
+    }
 
 }

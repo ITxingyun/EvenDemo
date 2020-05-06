@@ -5,10 +5,6 @@
         <attr name="itemSpacing" format="dimension"/>
         <attr name="lineSpacing" format="dimension"/>
         <attr name="expandLine" format="integer"/>
-        <attr name="expandedString" format="string"/>
-        <attr name="collapseString" format="string"/>
-        <attr name="clearText" format="string"/>
-        <attr name="clearTextA" format="reference"/>
     </declare-styleable>
 
 </resources>
