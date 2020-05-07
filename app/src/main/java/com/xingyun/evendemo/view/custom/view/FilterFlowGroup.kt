@@ -9,10 +9,30 @@ import com.xingyun.evendemo.R
 class FilterFlowGroup : ViewGroup {
     private var itemSpacing = 0
     private var lineSpacing = 0
-    private var lineCount = 1
     private var expandLine = 0
 
-    private var adapter : FilterFlowAdapter? = null
+    private var adapter: FilterFlowAdapter? = null
+
+    private val observer: FilterFlowAdapter.AdapterDataObserver = object : FilterFlowAdapter.AdapterDataObserver {
+        override fun removeItem(view: View) {
+            removeView(view)
+        }
+
+        override fun removeAll() {
+            removeAllViews()
+        }
+
+        override fun expandView(isExpanded: Boolean) {
+            adapter?.run {
+                val startIndex = expandViewPosition + 2
+                for (index in startIndex until childCount) {
+                    getChildAt(index).visibility = if (isExpanded) View.VISIBLE else View.GONE
+                }
+                requestLayout()
+            }
+        }
+
+    }
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -38,8 +58,13 @@ class FilterFlowGroup : ViewGroup {
     }
 
     fun setAdapter(adapter: FilterFlowAdapter) {
-        this.adapter = adapter
-
+        if (this.adapter != null) {
+            this.adapter?.unRegistryAdapterDataObserver(observer)
+        } else {
+            this.adapter = adapter
+            adapter.registryAdapterDataObserver(observer)
+        }
+        requestLayout()
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -54,16 +79,19 @@ class FilterFlowGroup : ViewGroup {
             var childLeft = paddingLeft
             var childTop = paddingTop
             var childBottom = childTop
-            var childRight: Int
+            var childRight = 0
             var maxChildRight = 0
             val maxRight = maxWidth - paddingRight
+            var lineCount = 1
 
-            val itemCount = getItemCount()
             val expandView = getExpandView(this@FilterFlowGroup)
             val clearAllView = getClearAllView(this@FilterFlowGroup)
             measureChild(expandView, widthMeasureSpec, heightMeasureSpec)
             measureChild(clearAllView, widthMeasureSpec, heightMeasureSpec)
 
+            val expandViewWidth = expandView.measuredWidth + itemSpacing + clearAllView.measuredWidth
+
+            val itemCount = getItemCount()
             for (i in 0 until itemCount) {
                 val child = getView(i, this@FilterFlowGroup)
                 if (child.visibility == View.GONE) {
@@ -73,10 +101,7 @@ class FilterFlowGroup : ViewGroup {
                 childRight = childLeft + child.measuredWidth
 
                 if (!hasExpanded && lineCount == expandLine) {
-                    val expandViewWidth = expandView.measuredWidth + itemSpacing + clearAllView.measuredWidth
-                    if (maxRight - expandViewWidth < childRight) {
-                        maxChildRight += expandViewWidth
-                        lineCount = 1
+                    if (childRight + expandViewWidth > maxRight) {
                         expandViewPosition = i
                         break
                     }
@@ -100,6 +125,10 @@ class FilterFlowGroup : ViewGroup {
                 childLeft += child.measuredWidth + itemSpacing
             }
 
+            if (hasExpanded && childRight + expandViewWidth + itemSpacing > maxRight) {
+                childBottom += expandView.measuredHeight + lineSpacing
+            }
+
             maxChildRight += paddingRight
             childBottom += paddingBottom
 
@@ -118,31 +147,56 @@ class FilterFlowGroup : ViewGroup {
     }
 
     override fun onLayout(sizeChanged: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-        val paddingStart = paddingLeft
-        val paddingEnd = paddingRight
-        var childStart = paddingStart
-        var childTop = paddingTop
-        var childBottom = childTop
-        var childEnd: Int
+        adapter?.run {
+            val paddingStart = paddingLeft
+            val paddingEnd = paddingRight
+            var childStart = paddingStart
+            var childTop = paddingTop
+            var childBottom = childTop
+            var childEnd: Int
 
-        val maxChildEnd = right - left - paddingEnd
+            val maxChildEnd = right - left - paddingEnd
 
-        for (i in 0 until childCount) {
-            val child = getChildAt(i)
-            if (child.visibility == View.GONE) {
-                continue
+            val itemCount = getExpandCount()
+            for (i in 0 until itemCount) {
+                val child = getView(i, this@FilterFlowGroup)
+                if (child.visibility == View.GONE) {
+                    continue
+                }
+
+                childEnd = childStart + child.measuredWidth
+                if (childEnd > maxChildEnd) {
+                    childStart = paddingStart
+                    childTop = childBottom + lineSpacing
+                }
+                childEnd = childStart + child.measuredWidth
+                childBottom = childTop + child.measuredHeight
+
+                child.layout(childStart, childTop, childEnd, childBottom)
+                childStart += child.measuredWidth + itemSpacing
             }
 
-            childEnd = childStart + child.measuredWidth
+            val expandView = getExpandView(this@FilterFlowGroup)
+            val clearAllView = getClearAllView(this@FilterFlowGroup)
+
+            childEnd = childStart + expandView.measuredWidth
             if (childEnd > maxChildEnd) {
                 childStart = paddingStart
                 childTop = childBottom + lineSpacing
             }
-            childEnd = childStart + child.measuredWidth
-            childBottom = childTop + child.measuredHeight
+            childEnd = childStart + expandView.measuredWidth
+            childBottom = childTop + expandView.measuredHeight
+            expandView.layout(childStart, childTop, childEnd, childBottom)
+            childStart += expandView.measuredWidth + itemSpacing
 
-            child.layout(childStart, childTop, childEnd, childBottom)
-            childStart += child.measuredWidth + itemSpacing
+            childEnd = childStart + clearAllView.measuredWidth
+            if (childEnd > maxChildEnd) {
+                childStart = paddingStart
+                childTop = childBottom + lineSpacing
+            }
+            childEnd = childStart + clearAllView.measuredWidth
+            childBottom = childTop + expandView.measuredHeight
+            clearAllView.layout(childStart, childTop, childEnd, childBottom)
         }
     }
 

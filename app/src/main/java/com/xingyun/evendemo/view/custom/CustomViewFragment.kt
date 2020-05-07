@@ -20,9 +20,9 @@ class CustomViewFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.filter.setAdapter(FilterFlowAdapter(listOf(
-                "aaaaaa", "bbbbbbbbbb", "cccccc", "ddddd" ,"eeeeee", "fffff",
-                "hhhhhhhhhhhhhh", "iiiiiiiiiiiii"
+        binding.filter.setAdapter(FilterFlowAdapter(mutableListOf(
+                "aaaaaa", "bbbbbbbbbb", "cccccc", "ddddd" ,"eeeeee", "fffff","aaaaaaa", "bbbbbbbbabb", "ccccccs", "dddddxd" ,"esaeeeee", "fffaaff",
+                "hhhhhhhhhhhhhh", "iiiiiiiiiiiiiiiiiiii", "aaaaaiiiiiiiiiiiiiiiiiiii", "aaassssiiiiiiiiiiiiiiiiiiii"
         )))
     }
 

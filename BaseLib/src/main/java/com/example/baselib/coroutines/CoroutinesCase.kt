@@ -1,17 +1,14 @@
 package com.example.baselib.coroutines
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-class CoroutinesCase {
-
-//    @Test
-//    fun test() {
-//        GlobalScope.launch {
-//            delay(100)
-//            println("World!")
-//        }
-//        println("Hello")
-//        Thread.sleep(2000L)
-//    }
-
-
+fun main()= runBlocking {
+    repeat(100_000) { // 启动大量的协程
+        launch {
+            delay(1000L)
+            print(".")
+        }
+    }
 }
