@@ -1,9 +1,12 @@
 package com.xingyun.evendemo.framework.window
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.PixelFormat
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.*
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
@@ -21,7 +24,7 @@ class WindowFragment : BaseFragment() {
     override val toolbarTitle: String = "Windows"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            DataBindingUtil.inflate<FragmentWindowBinding>(inflater, com.xingyun.evendemo.R.layout.fragment_window, container, false)
+            FragmentWindowBinding.inflate(inflater, container, false)
                     .also { binding = it }
                     .root
 
@@ -33,14 +36,10 @@ class WindowFragment : BaseFragment() {
             }
         }
 
-        ViewModelProviders.of(this)
-                .get(WindowViewModel::class.java)
-                .also { binding.viewModel = it }
-                .run {
-                    window.observe(this@WindowFragment, Observer {
-                        addWindow()
-                    })
-                }
+        binding.tvNewWindow.setOnClickListener {
+            permission()
+        }
+
     }
 
     private fun addWindow() {
@@ -52,6 +51,17 @@ class WindowFragment : BaseFragment() {
 
         activity?.let {
             it.windowManager.addView(button, layoutParams)
+        }
+    }
+
+    private fun permission() {
+        if (!Settings.canDrawOverlays(context)) {
+            val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+            startActivity(intent)
+            return
+        } else {
+            //Android6.0以上
+            addWindow()
         }
     }
 }

@@ -6,9 +6,10 @@ import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.bug.BugFragment
 import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.components.ComponentFragment
 import com.xingyun.evendemo.databinding.FragmentHomeBinding
 import com.xingyun.evendemo.framework.FrameWorkFragment
-import com.xingyun.evendemo.opensoruce.OpenSourceFragment
+import com.xingyun.evendemo.other.OtherFragment
 import com.xingyun.evendemo.view.ViewFragment
 
 class HomeFragment : BaseFragment() {
@@ -34,11 +35,17 @@ class HomeFragment : BaseFragment() {
         binding.btnFrameWork.setOnClickListener {
             obtainViewModel()?.replaceFragmentToActivity(FrameWorkFragment())
         }
-        binding.btnOpenSource.setOnClickListener {
-            obtainViewModel()?.replaceFragmentToActivity(OpenSourceFragment())
-        }
+
         binding.btnBug.setOnClickListener {
             obtainViewModel()?.replaceFragmentToActivity(BugFragment())
+        }
+
+        binding.btnOther.setOnClickListener {
+            obtainViewModel()?.replaceFragmentToActivity(OtherFragment())
+        }
+
+        binding.btnComponent.setOnClickListener {
+            obtainViewModel()?.replaceFragmentToActivity(ComponentFragment())
         }
     }
 }

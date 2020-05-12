@@ -66,4 +66,18 @@ public class AddTwoNumbers {
             val = x;
         }
     }
+
+    private static int c = 4;
+
+    public static void main(String[] args) {
+        int a = c++;
+        set();
+        System.out.println(a);
+    }
+
+    public static void set() {
+        c = 2;
+    }
+
+
 }

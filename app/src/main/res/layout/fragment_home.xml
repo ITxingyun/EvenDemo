@@ -35,10 +35,16 @@
             android:text="@string/tab_frame_work" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btn_open_source"
+            android:id="@+id/btn_component"
             style="@style/ButtonLrgPrimary"
             android:layout_width="match_parent"
-            android:text="@string/tab_open_source" />
+            android:text="@string/tab_component" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_other"
+            style="@style/ButtonLrgPrimary"
+            android:layout_width="match_parent"
+            android:text="@string/tab_other" />
 
 
     </LinearLayout>

@@ -7,7 +7,7 @@
         android:layout_height="match_parent">
 
 
-        <com.xingyun.evendemo.view.custom.view.FilterFlowGroup
+        <com.xingyun.evendemo.view.custom.view.MyFlowLayout
             android:id="@+id/filter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

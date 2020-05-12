@@ -33,6 +33,12 @@
     <string name="menu_search">搜索</string>
 
 
+    <!--其他-->
+    <string name="tab_other">其他</string>
+
+    <!--其他-->
+    <string name="tab_component">四大组件</string>
+
     <string name="registry_product_filter_option_more_view">+%d more</string>
 
 </resources>
