@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xingyun.evendemo.IUser
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentProcessBinding
 import com.xingyun.evendemo.other.process.client.ClientActivity

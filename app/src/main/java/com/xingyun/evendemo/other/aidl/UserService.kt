@@ -4,7 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
-import com.xingyun.evendemo.IUser
+import com.xingyun.evendemo.other.process.IUser
 
 class UserService: Service() {
 
