@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".eventbus.EventBusActivity"/>
+        <activity android:name=".rxjava.RxJavaActivity"/>
     </application>
 
 </manifest>
