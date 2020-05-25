@@ -12,6 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_rxjava.*
+import java.lang.NullPointerException
 
 class RxJavaActivity: AppCompatActivity() {
 
@@ -26,11 +27,11 @@ class RxJavaActivity: AppCompatActivity() {
 
     private fun subscribe() {
         Observable.create(ObservableOnSubscribe<String> {
-            Log.e("frame", "${Thread.currentThread()}")
+            Log.e("frame", "Observable: ${Thread.currentThread()}")
             it.onNext("1")
             it.onNext("2")
             it.onNext("3")
-            it.onComplete()
+            it.onError(NullPointerException())
             it.onNext("4")
             it.onNext("5")
         })
@@ -42,13 +43,11 @@ class RxJavaActivity: AppCompatActivity() {
             }
 
             override fun onSubscribe(d: Disposable) {
-                Log.e("frame", "onSubscribe")
-                Log.e("frame", "${Thread.currentThread()}")
+                Log.e("frame", "Observer onSubscribe: ${Thread.currentThread()}")
             }
 
             override fun onNext(t: String) {
-                Log.e("frame", "onNext: $t")
-                Log.e("frame", "${Thread.currentThread()}")
+                Log.e("frame", "onNext: $t Thread: ${Thread.currentThread()}")
             }
 
             override fun onError(e: Throwable) {

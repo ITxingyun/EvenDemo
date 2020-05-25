@@ -18,8 +18,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".eventbus.EventBusActivity"/>
-        <activity android:name=".rxjava.RxJavaActivity"/>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".leakcanary.LeakCanaryActivity" />
+        <activity android:name=".greendao.GreenDaoActivity" />
+        <activity android:name=".okhttp.OkHttpActivity" />
+        <activity android:name="com.example.retrofit.RetrofitActivity" />
     </application>
 
 </manifest>

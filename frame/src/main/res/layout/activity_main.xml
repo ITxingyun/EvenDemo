@@ -8,18 +8,53 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_start_event_bus"
+        android:id="@+id/tv_event_bus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="startEventBus" />
+        android:text="EventBus" />
 
 
     <TextView
-        android:id="@+id/tv_start_rxjava"
+        android:id="@+id/tv_rx_java"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="startRxJava" />
+        android:text="RxJava" />
+
+    <TextView
+        android:id="@+id/tv_glide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Glide" />
+
+    <TextView
+        android:id="@+id/tv_leak_canary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="LeakCanary" />
+
+    <TextView
+        android:id="@+id/tv_green_dao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="GreenDao" />
+
+    <TextView
+        android:id="@+id/tv_ok_http"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="OkHttp" />
+
+    <TextView
+        android:id="@+id/tv_retrofit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Retrofit" />
 
 </LinearLayout>
