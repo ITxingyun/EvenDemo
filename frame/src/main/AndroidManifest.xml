@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.frame">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -24,7 +26,7 @@
         <activity android:name=".leakcanary.LeakCanaryActivity" />
         <activity android:name=".greendao.GreenDaoActivity" />
         <activity android:name=".okhttp.OkHttpActivity" />
-        <activity android:name="com.example.retrofit.RetrofitActivity" />
+        <activity android:name="com.example.frame.retrofit.RetrofitActivity" />
     </application>
 
 </manifest>

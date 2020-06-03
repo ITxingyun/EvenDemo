@@ -9,7 +9,7 @@ import com.example.frame.greendao.GreenDaoActivity
 import com.example.frame.leakcanary.LeakCanaryActivity
 import com.example.frame.okhttp.OkHttpActivity
 import com.example.frame.rxjava.RxJavaActivity
-import com.example.retrofit.RetrofitActivity
+import com.example.frame.retrofit.RetrofitActivity
 import com.xingyun.library.utils.start
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
