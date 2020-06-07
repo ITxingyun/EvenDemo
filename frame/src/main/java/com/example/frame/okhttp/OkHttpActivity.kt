@@ -7,18 +7,23 @@ import kotlinx.android.synthetic.main.activity_ok_http.*
 import okhttp3.*
 import java.io.File
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 class OkHttpActivity : AppCompatActivity() {
-    private val okHttpClient =
-        OkHttpClient
-            .Builder()
-            .cache(Cache(File("test"), 1024))
-            .build()
+    private val maxSize = 20 * 1024 * 1024L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ok_http)
 
+        val okHttpClient =
+            OkHttpClient
+                .Builder()
+                .addNetworkInterceptor(NetworkCacheInterceptor())
+                .cache(Cache(applicationContext.cacheDir, maxSize))
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .build()
 
         tv_execute.setOnClickListener {
             val request = Request.Builder()
