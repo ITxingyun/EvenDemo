@@ -11,6 +11,11 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentViewPageBinding
+import com.xingyun.evendemo.view.custom.CustomViewFragment
+import com.xingyun.evendemo.view.menu.MenuFragment
+import com.xingyun.evendemo.view.recyclerview.LinearLayoutFragment
+import com.xingyun.evendemo.view.searchview.SearchViewFragment
+import com.xingyun.evendemo.view.shareelement.ShareElementFragment
 import kotlin.math.abs
 
 class ViewPage2Fragment : BaseFragment() {
@@ -48,15 +53,16 @@ class ViewPage2Fragment : BaseFragment() {
             setPageTransformer(ViewPager2PageTransformation())
         }
 
-        val fragments = listOf(PageFragment(), PageFragment(), PageFragment(), PageFragment())
+        val fragments = listOf(PageFragment(), MenuFragment(), ShareElementFragment(), CustomViewFragment(), LinearLayoutFragment())
         binding.vpFragment.apply {
             adapter = FragmentPageAdapter(
                 this@ViewPage2Fragment,
                 fragments
             )
         }
+
         TabLayoutMediator(binding.tabLayout, binding.vpFragment) {tab,position ->
-            tab.text = "Page ${(position + 1)}"
+            tab.text = "a Page ${(position + 1)}"
         }.attach()
     }
 

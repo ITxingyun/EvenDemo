@@ -3,6 +3,7 @@ package com.example.baselib.coroutines
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlin.concurrent.thread
 
 fun main()= runBlocking {
     repeat(100_000) { // 启动大量的协程
