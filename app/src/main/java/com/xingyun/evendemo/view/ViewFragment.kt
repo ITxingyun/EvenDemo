@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentListBinding
+import com.xingyun.evendemo.view.constraintlayout.ConstraintLayoutFragment
 import com.xingyun.evendemo.view.custom.CustomViewFragment
 import com.xingyun.evendemo.view.menu.MenuFragment
 import com.xingyun.evendemo.view.recyclerview.RecyclerViewFragment
 import com.xingyun.evendemo.view.searchview.SearchViewFragment
+import com.xingyun.evendemo.view.viewpage.ViewPage2BugFragment
 import com.xingyun.evendemo.view.viewpage.ViewPage2Fragment
 
 class ViewFragment : BaseFragment(),
@@ -29,9 +31,11 @@ class ViewFragment : BaseFragment(),
         super.onActivityCreated(savedInstanceState)
         val fragments = listOf(
                 ViewPage2Fragment(),
+                ViewPage2BugFragment(),
                 MenuFragment(),
                 SearchViewFragment(),
                 RecyclerViewFragment(),
+                ConstraintLayoutFragment(),
                 CustomViewFragment()
         )
         binding.recyclerView.apply {

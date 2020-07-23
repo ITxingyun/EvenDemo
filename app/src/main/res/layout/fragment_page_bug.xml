@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+<!--                <fragment-->
+<!--                    android:tag="fragment1"-->
+<!--                    class="com.xingyun.evendemo.view.viewpage.PageFragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp" />-->
+
+<!--                <fragment-->
+<!--                    android:tag="fragment2"-->
+<!--                    class="com.xingyun.evendemo.view.menu.MenuFragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp" />-->
+
+                <fragment
+                    android:tag="fragment3"
+                    class="com.xingyun.evendemo.bug.softkeyboard.InputModeFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <fragment
+                    android:tag="fragment4"
+                    class="com.xingyun.evendemo.framework.handler.HandlerFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+<!--                <fragment-->
+<!--                    android:tag="fragment5"-->
+<!--                    class="com.xingyun.evendemo.view.viewpage.PageFragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp" />-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
