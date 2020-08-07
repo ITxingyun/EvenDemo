@@ -1,6 +1,5 @@
 package com.example.baselib.mockk
 
-import com.nhaarman.mockitokotlin2.mock
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import org.junit.After
@@ -71,7 +70,6 @@ class ArithmeticTest {
         val arithmetic = Arithmetic(spy, printer)
 
         every { spy["magnify"](1) } returns 10
-        justRun {  }
 
         assertEquals(12, arithmetic.add(1, 2))
         verifySequence {

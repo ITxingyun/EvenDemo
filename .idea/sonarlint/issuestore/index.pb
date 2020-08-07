@@ -274,3 +274,11 @@ m
 =BaseLib/src/main/java/com/example/baselib/mockk/Arithmetic.kt,5/2/52768723a617f38dfd0857537e02a06faeb97793
 s
 CBaseLib/src/test/kotlin/com/example/baselib/mockk/ArithmeticTest.kt,f/6/f659cb388aa5bb3d62b9bbed55a54a5006204bdc
+m
+=BaseLib/src/main/java/com/example/baselib/mockk/UtilKotlin.kt,b/9/b98f2ad3f5802752115ebc32e7df306f0558860d
+m
+=BaseLib/src/main/java/com/example/baselib/mockk/UtilJava.java,0/2/0298938c286d06901180069bf8242454ca70cc7b
+g
+7BaseLib/src/main/java/com/example/baselib/mockk/Util.kt,e/f/efef11421b658d1dfd5bb3eaa7b888daa5398714
+m
+=BaseLib/src/test/kotlin/com/example/baselib/mockk/UtilTest.kt,0/9/0951f71f32fdbaffaed666fe82ee5714348738c7
