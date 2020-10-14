@@ -15,15 +15,19 @@ import com.xingyun.evendemo.R
 import com.xingyun.evendemo.databinding.LayoutTransactionalSearchBinding
 
 class TransactionalSearchView : ConstraintLayout, CollapsibleActionView {
-    constructor(context: Context?) : super(context) {
+    constructor(context: Context) : super(context) {
         initAttribute(null)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         initAttribute(attrs)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         initAttribute(attrs)
     }
 
