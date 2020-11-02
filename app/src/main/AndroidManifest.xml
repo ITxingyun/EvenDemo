@@ -80,6 +80,8 @@
             </intent-filter>
         </service>
 
+        <service android:name=".components.service.MyService" />
+
     </application>
 
 </manifest>

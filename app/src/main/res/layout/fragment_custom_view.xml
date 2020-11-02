@@ -4,17 +4,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <com.xingyun.evendemo.view.custom.view.MyFlowLayout
             android:id="@+id/filter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:background="@color/coolgray_500"
-            app:lineSpacing="20dp"
-            app:itemSpacing="20dp"/>
+            android:padding="20dp"
+            app:itemSpacing="20dp"
+            app:lineSpacing="20dp" />
+
+
+        <com.xingyun.evendemo.view.custom.view.OvalLabelView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            app:label="1"
+            app:labelColor="@color/white"
+            app:labelSize="15dp"
+            app:ovalLabelBackground="@color/colorPrimary" />
 
     </LinearLayout>
 </layout>

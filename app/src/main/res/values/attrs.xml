@@ -2,9 +2,16 @@
 <resources>
 
     <declare-styleable name="MyFlowLayout">
-        <attr name="itemSpacing" format="dimension"/>
-        <attr name="lineSpacing" format="dimension"/>
-        <attr name="expandLine" format="integer"/>
+        <attr name="itemSpacing" format="dimension" />
+        <attr name="lineSpacing" format="dimension" />
+        <attr name="expandLine" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="OvalLabelView">
+        <attr name="ovalLabelBackground" format="reference|color" />
+        <attr name="labelColor" format="reference|color" />
+        <attr name="label" format="reference|string" />
+        <attr name="labelSize" format="reference|dimension" />
     </declare-styleable>
 
 </resources>

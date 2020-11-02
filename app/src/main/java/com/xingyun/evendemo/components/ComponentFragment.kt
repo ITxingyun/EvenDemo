@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.components.service.ServiceFragment
 import com.xingyun.evendemo.databinding.FragmentListBinding
-import com.xingyun.evendemo.other.PermissionFragment
 
 class ComponentFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
     private lateinit var binding: FragmentListBinding
@@ -22,12 +22,13 @@ class ComponentFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        val fragments = listOf(
-//        )
-//        binding.recyclerView.apply {
-//            layoutManager = LinearLayoutManager(activity)
-//            adapter = ProjectAdapter(fragments, this@ComponentFragment)
-//        }
+        val fragments = listOf(
+                ServiceFragment()
+        )
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = ProjectAdapter(fragments, this@ComponentFragment)
+        }
     }
 
     override fun onItemClick(fragment: BaseFragment) {
