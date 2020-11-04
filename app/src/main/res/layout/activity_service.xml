@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:elevation="3dp"
+                app:contentInsetStartWithNavigation="4dp"
+                app:navigationIcon="@drawable/back"
+                app:title="@string/component_service" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="----------startService---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_start_service"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_start_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_stop_self"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_stop_self" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="----------bindService---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_bind_service"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_bind_service" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_send_message_to_service"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_send_message_to_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_unbind_service"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_un_bind_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="----------IntentService---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_intent_service"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_un_bind_service" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

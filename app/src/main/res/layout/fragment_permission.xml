@@ -10,13 +10,11 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_camera"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="获取相机权限" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_alert_window"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="获取弹窗权限" />
 
 

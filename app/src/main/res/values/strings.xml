@@ -11,11 +11,11 @@
 
     <!--View-->
     <string name="tab_view">View</string>
-    <!--RecyclerView-->
+    <string name="registry_product_filter_option_more_view">+%d more</string>
     <string name="recycler_view_simple">简单的LinearLayoutManager布局</string>
     <string name="recycler_view_multiple_view_type">多ViewType LinearLayoutManager布局</string>
 
-    <!--View-->
+    <!--Bug-->
     <string name="tab_bug">Bug</string>
 
     <!--framework-->
@@ -29,16 +29,22 @@
     <!--开源框架-->
     <string name="tab_open_source">开源</string>
 
-    <!--menu-->
-    <string name="menu_search">搜索</string>
+
+    <!--四大组件-->
+    <string name="tab_component">四大组件</string>
+    <string name="component_service">Service</string>
+    <string name="component_service_start_service">startService</string>
+    <string name="component_service_bind_service">bindService</string>
+    <string name="component_service_un_bind_service">unBindService</string>
+    <string name="component_service_stop_self">stopSelf</string>
+    <string name="component_service_send_message_to_service">sendMessageToService</string>
+
+    <!--样式-->
+    <string name="tab_style">样式</string>
 
 
     <!--其他-->
     <string name="tab_other">其他</string>
-
-    <!--其他-->
-    <string name="tab_component">四大组件</string>
-
-    <string name="registry_product_filter_option_more_view">+%d more</string>
+    <string name="menu_search">搜索</string>
 
 </resources>

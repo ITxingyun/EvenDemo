@@ -1,7 +1,9 @@
 package com.xingyun.evendemo.home
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.bug.BugFragment
@@ -46,6 +48,10 @@ class HomeFragment : BaseFragment() {
 
         binding.btnComponent.setOnClickListener {
             obtainViewModel()?.replaceFragmentToActivity(ComponentFragment())
+        }
+
+        binding.btnStyle.setOnClickListener {
+
         }
     }
 }

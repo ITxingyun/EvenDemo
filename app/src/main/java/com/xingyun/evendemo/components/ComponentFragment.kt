@@ -4,34 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.common.ui.BaseFragment
-import com.xingyun.evendemo.components.service.ServiceFragment
-import com.xingyun.evendemo.databinding.FragmentListBinding
+import com.xingyun.evendemo.components.service.ServiceActivity
+import com.xingyun.evendemo.databinding.FragmentComponentBinding
+import com.xingyun.library.utils.start
 
-class ComponentFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
-    private lateinit var binding: FragmentListBinding
+class ComponentFragment : BaseFragment() {
+    private lateinit var binding: FragmentComponentBinding
 
     override val toolbarTitle: String = "四大组件"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            FragmentListBinding.inflate(inflater, container, false)
-                    .also { binding = it }
-                    .root
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
+        FragmentComponentBinding.inflate(inflater, container, false)
+            .also { binding = it }
+            .root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fragments = listOf(
-                ServiceFragment()
-        )
-        binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = ProjectAdapter(fragments, this@ComponentFragment)
+        binding.tvService.setOnClickListener {
+            activity?.start<ServiceActivity>()
         }
     }
 
-    override fun onItemClick(fragment: BaseFragment) {
-        obtainViewModel()?.replaceFragmentToActivity(fragment)
-    }
+
 }

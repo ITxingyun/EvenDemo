@@ -52,11 +52,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.shareelement.ShareElementActivity"/>
+        <activity android:name=".components.service.ServiceActivity" />
 
-        <activity android:name=".other.process.client.ClientActivity"/>
+        <activity android:name=".view.shareelement.ShareElementActivity" />
 
-        <service android:name=".other.process.server.RemoteService"
+        <activity android:name=".other.process.client.ClientActivity" />
+
+        <service
+            android:name=".other.process.server.RemoteService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote">

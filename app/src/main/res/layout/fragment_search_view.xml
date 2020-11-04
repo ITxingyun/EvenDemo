@@ -41,7 +41,6 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_test"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:layout_marginTop="200dp" />
 
     </LinearLayout>

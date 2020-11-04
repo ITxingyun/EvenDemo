@@ -12,40 +12,39 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:title="@string/app_name"
-            android:elevation="3dp" />
+            android:elevation="3dp"
+            app:title="@string/app_name" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_view"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:layout_marginTop="50dp"
             android:text="@string/tab_view" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_bug"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="@string/tab_bug" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_frame_work"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="@string/tab_frame_work" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_component"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="@string/tab_component" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_style"
+            style="@style/ButtonLrgPrimary"
+            android:text="@string/tab_style" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_other"
             style="@style/ButtonLrgPrimary"
-            android:layout_width="match_parent"
             android:text="@string/tab_other" />
-
 
     </LinearLayout>
 </layout>
