@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.xingyun.library.MyApp"
@@ -71,7 +71,8 @@
             </intent-filter>
         </service>
 
-        <service android:name=".other.aidl.UserService"
+        <service
+            android:name=".other.aidl.UserService"
             android:enabled="true"
             android:exported="true"
             android:process=":user">
@@ -84,6 +85,11 @@
         </service>
 
         <service android:name=".components.service.MyService" />
+        <service android:name=".components.service.MyIntentService" />
+
+        <service
+            android:name=".components.service.MusicManagerService"
+            android:process=":test01" />
 
     </application>
 

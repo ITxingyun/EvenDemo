@@ -38,6 +38,8 @@
     <string name="component_service_un_bind_service">unBindService</string>
     <string name="component_service_stop_self">stopSelf</string>
     <string name="component_service_send_message_to_service">sendMessageToService</string>
+    <string name="component_service_start_intent_service">startIntentService</string>
+    <string name="component_service_download_music">下载音乐</string>
 
     <!--样式-->
     <string name="tab_style">样式</string>

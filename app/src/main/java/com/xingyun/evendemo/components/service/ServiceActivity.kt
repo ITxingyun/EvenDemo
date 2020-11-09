@@ -6,11 +6,13 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
-import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
+import com.xingyun.evendemo.components.service.aidl.IMusicPlayer
 import com.xingyun.evendemo.databinding.ActivityServiceBinding
+import com.xingyun.evendemo.utils.EvenLog
 import com.xingyun.library.base.BaseActivity
+import om.xingyun.evendemo.components.service.aidl.IDownloadMusicListener
 
 /**
  * 1、Service的简单使用
@@ -24,15 +26,45 @@ class ServiceActivity : BaseActivity() {
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceDisconnected(name: ComponentName?) {
-            Log.d("ServiceConnection", "onServiceDisconnected -> name = $name")
+            EvenLog.d("ServiceConnection", "name = $name")
             myBinder = null
         }
 
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            Log.d("ServiceConnection", "onServiceConnected -> name = $name")
+            EvenLog.d("ServiceConnection", "name = $name")
             if (service is MyService.MyBinder) {
                 myBinder = service
             }
+        }
+
+    }
+
+
+    private val downloadMusicListener = object : IDownloadMusicListener.Stub() {
+        override fun startDownload() {
+            EvenLog.d(TAG, "客户端：startDownload")
+        }
+
+        override fun downloadFinish() {
+            EvenLog.d(TAG, "客户端：downloadFinish")
+        }
+
+        override fun proccess(proccess: Int) {
+            EvenLog.d(TAG, "客户端：下载进度 $proccess%")
+        }
+
+    }
+
+    private val downLoadMusicConnection = object : ServiceConnection {
+        var musicPlayer: IMusicPlayer? = null
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            musicPlayer?.unregisterListener(downloadMusicListener)
+        }
+
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            musicPlayer = IMusicPlayer.Stub.asInterface(service)
+            musicPlayer?.registerListener(downloadMusicListener)
         }
 
     }
@@ -64,6 +96,14 @@ class ServiceActivity : BaseActivity() {
         binding.tvStopSelf.setOnClickListener {
             stopService(Intent(this, MyService::class.java))
         }
+
+        binding.tvStartIntentService.setOnClickListener {
+            startIntentService()
+        }
+
+        binding.tvDownloadMusic.setOnClickListener {
+            downloadMusic()
+        }
     }
 
 
@@ -84,5 +124,23 @@ class ServiceActivity : BaseActivity() {
         startService(intent)
     }
 
+    private fun startIntentService() {
+        val intent = Intent(this, MyIntentService::class.java)
+        startService(intent)
+    }
+
+
+    /**
+     * AIDL demo
+     */
+    private fun downloadMusic() {
+        val intent = Intent(this, MusicManagerService::class.java)
+        bindService(intent, downLoadMusicConnection, Context.BIND_AUTO_CREATE)
+    }
+
+
+    companion object {
+        private const val TAG = "ServiceActivity"
+    }
 
 }

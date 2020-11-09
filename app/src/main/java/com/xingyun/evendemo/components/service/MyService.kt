@@ -4,7 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.Binder
 import android.os.IBinder
-import android.util.Log
+import com.xingyun.evendemo.utils.EvenLog
 
 class MyService : Service() {
     private val myBinder = MyBinder(this)
@@ -27,31 +27,31 @@ class MyService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG, "onCreate")
+        EvenLog.d(TAG, "onCreate")
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        Log.d(TAG, "onBind")
+        EvenLog.d(TAG, "onBind")
         return myBinder
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d(TAG, "onStartCommand -> flags = $flags and startId = $startId")
+        EvenLog.d(TAG, "onStartCommand -> flags = $flags and startId = $startId")
         return super.onStartCommand(intent, flags, startId)
     }
 
     fun process() {
-        Log.d(TAG, "Service is processing something")
+        EvenLog.d(TAG, "Service is processing something")
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
-        Log.d(TAG, "onUnbind")
+        EvenLog.d(TAG, "onUnbind")
         return super.onUnbind(intent)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy")
+        EvenLog.d(TAG, "onDestroy")
     }
 
     class MyBinder(private val myService: MyService) : Binder() {

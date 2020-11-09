@@ -70,9 +70,23 @@
                 android:text="----------IntentService---------" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_intent_service"
+                android:id="@+id/tv_start_intent_service"
                 style="@style/ButtonLrgPrimary"
-                android:text="@string/component_service_un_bind_service" />
+                android:text="@string/component_service_start_intent_service" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="----------AIDL---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_download_music"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_service_download_music" />
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
