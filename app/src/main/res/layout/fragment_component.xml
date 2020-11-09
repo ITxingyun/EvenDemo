@@ -6,11 +6,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_service"
             style="@style/ButtonLrgPrimary"
             android:text="@string/component_service" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content_provider"
+            style="@style/ButtonLrgPrimary"
+            android:text="@string/component_service_content_provider" />
 
 
     </LinearLayout>

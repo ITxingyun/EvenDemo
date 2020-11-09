@@ -9,6 +9,7 @@ import android.os.IBinder
 import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.components.service.aidl.IMusicPlayer
+import com.xingyun.evendemo.components.service.aidl.Music
 import com.xingyun.evendemo.databinding.ActivityServiceBinding
 import com.xingyun.evendemo.utils.EvenLog
 import com.xingyun.library.base.BaseActivity
@@ -22,6 +23,8 @@ import om.xingyun.evendemo.components.service.aidl.IDownloadMusicListener
  */
 class ServiceActivity : BaseActivity() {
     private lateinit var binding: ActivityServiceBinding
+
+    //region Service的简单使用
     private var myBinder: MyService.MyBinder? = null
 
     private val serviceConnection = object : ServiceConnection {
@@ -38,15 +41,18 @@ class ServiceActivity : BaseActivity() {
         }
 
     }
+    //endregion
 
+    //region AIDL的使用
+    private var musicPlayer: IMusicPlayer? = null
 
     private val downloadMusicListener = object : IDownloadMusicListener.Stub() {
-        override fun startDownload() {
-            EvenLog.d(TAG, "客户端：startDownload")
+        override fun startDownload(message: String) {
+            EvenLog.d(TAG, message)
         }
 
-        override fun downloadFinish() {
-            EvenLog.d(TAG, "客户端：downloadFinish")
+        override fun downloadFinish(message: String) {
+            EvenLog.d(TAG, message)
         }
 
         override fun proccess(proccess: Int) {
@@ -56,8 +62,6 @@ class ServiceActivity : BaseActivity() {
     }
 
     private val downLoadMusicConnection = object : ServiceConnection {
-        var musicPlayer: IMusicPlayer? = null
-
         override fun onServiceDisconnected(name: ComponentName?) {
             musicPlayer?.unregisterListener(downloadMusicListener)
         }
@@ -68,6 +72,7 @@ class ServiceActivity : BaseActivity() {
         }
 
     }
+    //endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,8 +107,10 @@ class ServiceActivity : BaseActivity() {
         }
 
         binding.tvDownloadMusic.setOnClickListener {
-            downloadMusic()
+            musicPlayer?.downloadMusic(Music("青花瓷", "最好的"))
         }
+
+        bindMusicManagerService()
     }
 
 
@@ -129,11 +136,10 @@ class ServiceActivity : BaseActivity() {
         startService(intent)
     }
 
-
     /**
      * AIDL demo
      */
-    private fun downloadMusic() {
+    private fun bindMusicManagerService() {
         val intent = Intent(this, MusicManagerService::class.java)
         bindService(intent, downLoadMusicConnection, Context.BIND_AUTO_CREATE)
     }

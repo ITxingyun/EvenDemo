@@ -19,12 +19,12 @@ class MusicManagerService : Service() {
 
         override fun downloadMusic(novel: Music?) {
             novel?.run {
-                downloadListener?.startDownload()
+                downloadListener?.startDownload("开始下载-> ${novel.musicName}")
                 for (i in 0..100) {
                     downloadListener?.proccess(i)
                     Thread.sleep(50)
                 }
-                downloadListener?.downloadFinish()
+                downloadListener?.downloadFinish("完成下载-> ${novel.musicName}")
             }
         }
 

@@ -1,10 +1,10 @@
 // IDownloadMusicListener.aidl
 package om.xingyun.evendemo.components.service.aidl;
 
-        interface IDownloadMusicListener {
-   void startDownload();
+interface IDownloadMusicListener {
+   void startDownload(String message);
 
    void proccess(int proccess);
 
-   void downloadFinish();
+   void downloadFinish(String message);
 }

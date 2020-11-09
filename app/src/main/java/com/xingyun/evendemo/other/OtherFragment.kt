@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.common.adapter.ProjectAdapter
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentListBinding
-import com.xingyun.evendemo.other.process.ProcessFragment
 
 class OtherFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
     private lateinit var binding: FragmentListBinding
@@ -23,8 +22,7 @@ class OtherFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val fragments = listOf(
-                PermissionFragment(),
-                ProcessFragment()
+                PermissionFragment()
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
