@@ -16,7 +16,19 @@ public class MvpPresenter implements MvpContract.IPresenter {
 
     @Override
     public void loadData() {
-        mModel.fetchData();
-        mView.showMessage();
+        mView.showSpanner();
+        mModel.fetchData(new LoadDataCallback<String>() {
+            @Override
+            public void onSuccess(String data) {
+                mView.showMessage(data);
+                mView.hideSpanner();
+            }
+
+            @Override
+            public void onError(int error, String message) {
+                mView.showMessage(error + message);
+                mView.hideSpanner();
+            }
+        });
     }
 }

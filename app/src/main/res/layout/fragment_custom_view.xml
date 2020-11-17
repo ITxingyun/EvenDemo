@@ -28,5 +28,14 @@
             app:labelSize="15dp"
             app:ovalLabelBackground="@color/colorPrimary" />
 
+        <com.xingyun.evendemo.view.custom.view.MyCompoundButton
+            android:id="@+id/cb_test"
+            style="@style/ToggleButtonStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:checked="true"
+            android:clickable="true" />
+
+
     </LinearLayout>
 </layout>

@@ -9,7 +9,7 @@ public class MvpModel implements MvpContract.IModel {
 
 
     @Override
-    public void fetchData() {
+    public void fetchData(LoadDataCallback<String> callback) {
 
     }
 }

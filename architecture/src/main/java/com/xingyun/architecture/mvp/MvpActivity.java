@@ -10,7 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MvpActivity extends AppCompatActivity implements MvpContract.IView {
 
     @Override
-    public void showMessage() {
+    public void showMessage(String message) {
+
+    }
+
+
+    @Override
+    public void showSpanner() {
+
+    }
+
+    @Override
+    public void hideSpanner() {
 
     }
 }

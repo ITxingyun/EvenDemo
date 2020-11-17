@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.components.service.aidl.IMusicPlayer
 import com.xingyun.evendemo.components.service.aidl.Music
+import com.xingyun.evendemo.components.service.aidl.MusicManagerService
 import com.xingyun.evendemo.databinding.ActivityServiceBinding
 import com.xingyun.evendemo.utils.EvenLog
 import com.xingyun.library.base.BaseActivity
@@ -18,7 +19,7 @@ import om.xingyun.evendemo.components.service.aidl.IDownloadMusicListener
 /**
  * 1、Service的简单使用
  * 2、IntentService的使用
- * 3、AIDL的使用
+ * 3、AIDL的使用，以及AIDL的本质是什么
  * 4、Service怎么做单元测试
  */
 class ServiceActivity : BaseActivity() {

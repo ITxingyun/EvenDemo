@@ -37,4 +37,15 @@
         <item name="voiceIcon">@drawable/abc_ic_voice_search_api_material</item>
     </style>
 
+    <!--View样式-->
+    <style name="ToggleButtonStyle">
+        <item name="android:background">@drawable/selector_toggle_button</item>
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

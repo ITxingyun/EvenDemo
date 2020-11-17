@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentCustomViewBinding
-import com.xingyun.evendemo.view.custom.view.FilterFlowAdapter
 
 class CustomViewFragment : BaseFragment() {
     private lateinit var binding: FragmentCustomViewBinding
@@ -21,9 +20,14 @@ class CustomViewFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.filter.update(listOf(
-                "aaaaaa", "bbbbbbbbbb", "cccccc", "ddddd" ,"eeeeee", "fffff","aaaaaaa", "bbbbbbbbabb", "ccccccs", "dddddxd" ,"esaeeeee", "fffaaff",
+                "aaaaaa", "bbbbbbbbbb", "cccccc", "ddddd", "eeeeee", "fffff", "aaaaaaa", "bbbbbbbbabb", "ccccccs", "dddddxd", "esaeeeee", "fffaaff",
                 "hhhhhhhhhhhhhh", "iiiiiiiiiiiiiiiiiiii", "aaaaaiiiiiiiiiiiiiiiiiiii", "aaassssiiiiiiiiiiiiiiiiiiii"
         ))
+
+        binding.cbTest.setOnCheckedChangeListener({ buttonView, isChecked ->
+            println("$isChecked")
+        })
+
     }
 
 }

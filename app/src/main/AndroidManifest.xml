@@ -56,37 +56,11 @@
 
         <activity android:name=".view.shareelement.ShareElementActivity" />
 
-        <service
-            android:name=".other.process.server.RemoteService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":remote">
-            <intent-filter>
-
-                <action android:name="com.xingyun.evendemo.ipc" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".other.aidl.UserService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":user">
-            <intent-filter>
-
-                <action android:name="user.ipc" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-            </intent-filter>
-        </service>
-
         <service android:name=".components.service.MyService" />
         <service android:name=".components.service.MyIntentService" />
 
         <service
-            android:name=".components.service.MusicManagerService"
+            android:name=".components.service.aidl.MusicManagerService"
             android:process=":test01" />
 
     </application>
