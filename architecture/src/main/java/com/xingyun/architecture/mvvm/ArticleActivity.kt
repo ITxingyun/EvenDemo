@@ -19,14 +19,12 @@ class ArticleActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         ViewModelProviders.of(this)
-                .get(ArticleViewModel::class.java)
-                .also {
-                    viewModel = it
-                    binding.viewModel = it
-                }
-                .run {
-                    loadArticle(123)
-                }
+            .get(ArticleViewModel::class.java)
+            .also {
+                viewModel = it
+                binding.viewModel = it
+            }
+            .run { loadArticle(123) }
     }
 
 }
