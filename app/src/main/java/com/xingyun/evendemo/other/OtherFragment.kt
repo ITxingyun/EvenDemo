@@ -14,7 +14,7 @@ class OtherFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
 
     override val toolbarTitle: String = "其他"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             FragmentListBinding.inflate(inflater, container, false)
                     .also { binding = it }
                     .root
@@ -22,7 +22,8 @@ class OtherFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val fragments = listOf(
-                PermissionFragment()
+                PermissionFragment(),
+                AnimationFragment()
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
