@@ -6,8 +6,6 @@ import java.util.List;
 import static com.google.common.truth.Truth.assertThat;
 
 /**
- * @author chenyiwen2
- * date: 2020/11/19
  * desc: Mock用来跟踪方法调用，根据方法是否被正确的调用来判断测试是否通过
  */
 public class LibrarianMock implements Librarian {

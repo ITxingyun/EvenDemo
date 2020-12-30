@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author chenyiwen2
- * date: 2020/11/19
  * desc: Spy用来跟踪一些信息，例如方法被调用的次数
  */
 public class LibrarianSpy implements Librarian {

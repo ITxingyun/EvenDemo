@@ -3,8 +3,6 @@ package com.xingyun.architecture.mvp;
 import com.xingyun.architecture.data.DataRepository;
 
 /**
- * @author chenyiwen2
- * date: 2020/10/15
  * desc:
  */
 public class MvpModel implements MvpContract.IModel {

@@ -12,8 +12,6 @@ import com.xingyun.evendemo.R;
 
 
 /**
- * @author chenyiwen2
- * date: 2020/10/28
  * 文本居中：https://blog.csdn.net/kong_gu_you_lan/article/details/78927930
  */
 public class OvalLabelView extends View {

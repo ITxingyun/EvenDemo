@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author chenyiwen2
- * date: 2020/11/19
  * desc:
  */
 public class FakeBookDatabase implements BookDatabase {

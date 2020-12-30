@@ -1,8 +1,6 @@
 package com.xingyun.javalib.testdouble;
 
 /**
- * @author chenyiwen2
- * date: 2020/11/19
  * desc: 演示Test Double的demo
  */
 public class BookManageSystem {

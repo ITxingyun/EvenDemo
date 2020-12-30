@@ -1,8 +1,6 @@
 package com.xingyun.javalib.testdouble;
 
 /**
- * @author chenyiwen2
- * date: 2020/11/19
  * desc:
  */
 public class Book {
