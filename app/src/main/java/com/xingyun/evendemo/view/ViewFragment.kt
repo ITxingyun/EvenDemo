@@ -13,6 +13,7 @@ import com.xingyun.evendemo.view.custom.CustomViewFragment
 import com.xingyun.evendemo.view.menu.MenuFragment
 import com.xingyun.evendemo.view.recyclerview.RecyclerViewFragment
 import com.xingyun.evendemo.view.searchview.SearchViewFragment
+import com.xingyun.evendemo.view.textview.TextViewFragment
 import com.xingyun.evendemo.view.viewpage.ViewPage2BugFragment
 import com.xingyun.evendemo.view.viewpage.ViewPage2Fragment
 
@@ -22,7 +23,7 @@ class ViewFragment : BaseFragment(),
 
     override val toolbarTitle: String = "Android控件Demo"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             FragmentListBinding.inflate(inflater, container, false)
                     .also { binding = it }
                     .root
@@ -36,7 +37,8 @@ class ViewFragment : BaseFragment(),
                 SearchViewFragment(),
                 RecyclerViewFragment(),
                 ConstraintLayoutFragment(),
-                CustomViewFragment()
+                CustomViewFragment(),
+                TextViewFragment()
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
