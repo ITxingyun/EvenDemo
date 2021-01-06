@@ -1,3 +1,4 @@
+include ':thirdLib'
 include ':Test'
 include ':architecture'
 include ':app'
