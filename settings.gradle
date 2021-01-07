@@ -1,3 +1,6 @@
+include ':apt:apt-library'
+include ':apt:apt-processor'
+include ':apt:apt-annotation'
 include ':thirdLib'
 include ':Test'
 include ':architecture'
