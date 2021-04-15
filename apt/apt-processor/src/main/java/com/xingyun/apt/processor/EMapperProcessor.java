@@ -17,6 +17,7 @@ import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
@@ -48,11 +49,11 @@ public class EMapperProcessor extends AbstractProcessor {
 		return supportTypes;
 	}
 
-//	@Override
-//	public SourceVersion getSupportedSourceVersion() {
-//		//指定使用的Java版本
-//		return SourceVersion.latestSupported();
-//	}
+	@Override
+	public SourceVersion getSupportedSourceVersion() {
+		//指定使用的Java版本
+		return SourceVersion.latestSupported();
+	}
 
 	@Override
 	public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
@@ -61,15 +62,7 @@ public class EMapperProcessor extends AbstractProcessor {
 		Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(EMapper.class);
 
 		for (Element element : elements) {
-			VariableElement variableElement = (VariableElement) element;
-			TypeElement classElement = (TypeElement) variableElement.getEnclosingElement();
-			String fullClassName = classElement.getQualifiedName().toString();
-
-			mMessager.printMessage(Diagnostic.Kind.NOTE, "QualifiedName: " + fullClassName);
-			mMessager.printMessage(Diagnostic.Kind.NOTE, "SimpleName: " + classElement.getSimpleName().toString());
-
-			EMapper mapperAnnotation = variableElement.getAnnotation(EMapper.class);
-			generateMapperFile(fullClassName);
+			generateMapperFile("fullClassName");
 		}
 
 		return true;

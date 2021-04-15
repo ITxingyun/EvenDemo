@@ -1,10 +1,11 @@
 package com.xingyun.thirdlib.mapstruct;
 
+import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper( builder = @Builder)
 public interface DomainMapper {
 	DomainMapper INSTANCE = Mappers.getMapper(DomainMapper.class);
 
