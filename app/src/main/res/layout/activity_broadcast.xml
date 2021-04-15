@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:elevation="3dp"
+                app:contentInsetStartWithNavigation="4dp"
+                app:navigationIcon="@drawable/back"
+                app:title="@string/component_broadcast_receiver" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="----------sendOrderedBroadcast---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_send_ordered_broadcast"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_broadcast_receiver_send_ordered_broadcast" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="----------sendOrderedBroadcast---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_send_broadcast"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_broadcast_receiver_send_broadcast" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="----------sendLocalBroadcast---------" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_send_local_broadcast"
+                style="@style/ButtonLrgPrimary"
+                android:text="@string/component_broadcast_receiver_send_local_broadcast" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

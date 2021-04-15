@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.xingyun.evendemo.common.ui.BaseFragment
+import com.xingyun.evendemo.components.broadcast.BroadcastReceiverActivity
 import com.xingyun.evendemo.components.service.ServiceActivity
 import com.xingyun.evendemo.databinding.FragmentComponentBinding
 import com.xingyun.library.utils.start
@@ -27,6 +28,10 @@ class ComponentFragment : BaseFragment() {
 
         binding.tvContentProvider.setOnClickListener {
 
+        }
+
+        binding.tvBroadcastReceiver.setOnClickListener {
+            activity?.start<BroadcastReceiverActivity>()
         }
     }
 

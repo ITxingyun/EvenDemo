@@ -14,7 +14,12 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_content_provider"
             style="@style/ButtonLrgPrimary"
-            android:text="@string/component_service_content_provider" />
+            android:text="@string/component_content_provider" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_receiver"
+            style="@style/ButtonLrgPrimary"
+            android:text="@string/component_broadcast_receiver" />
 
 
     </LinearLayout>

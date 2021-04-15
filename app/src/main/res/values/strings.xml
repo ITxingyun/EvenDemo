@@ -42,7 +42,11 @@
     <string name="component_service_start_intent_service">startIntentService</string>
     <string name="component_service_download_music">下载音乐</string>
 
-    <string name="component_service_content_provider">内容提供者</string>
+    <string name="component_content_provider">内容提供者</string>
+    <string name="component_broadcast_receiver">BroadcastReceiver</string>
+    <string name="component_broadcast_receiver_send_ordered_broadcast">sendOrderedBroadcast</string>
+    <string name="component_broadcast_receiver_send_broadcast">sendBroadcast</string>
+    <string name="component_broadcast_receiver_send_local_broadcast">sendLocalBroadcast</string>
 
     <!--样式-->
     <string name="tab_style">样式</string>

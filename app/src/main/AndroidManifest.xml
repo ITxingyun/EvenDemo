@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:name="com.xingyun.library.MyApp"
@@ -52,16 +53,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".components.service.ServiceActivity" />
-
         <activity android:name=".view.shareelement.ShareElementActivity" />
 
+        <activity android:name=".components.service.ServiceActivity" />
         <service android:name=".components.service.MyService" />
         <service android:name=".components.service.MyIntentService" />
-
         <service
             android:name=".components.service.aidl.MusicManagerService"
             android:process=":test01" />
+
+        <activity android:name=".components.broadcast.BroadcastReceiverActivity" />
+        <receiver android:name=".components.broadcast.MyBroadcastReceiver01">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
