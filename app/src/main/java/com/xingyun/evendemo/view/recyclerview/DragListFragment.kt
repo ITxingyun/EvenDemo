@@ -33,7 +33,6 @@ class DragListFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val dragAdapter = DragAdapter(simpleList)
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.addItemDecoration(CacheTestAdapter.DivideDecorator(resources))
         binding.recyclerView.adapter = dragAdapter
         ItemTouchHelper(MyItemTouchHelperCallback(dragAdapter)).attachToRecyclerView(binding.recyclerView)
