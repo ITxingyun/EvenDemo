@@ -28,7 +28,8 @@ class RecyclerViewFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListe
             adapter = ProjectAdapter(listOf(
                     LinearLayoutFragment(),
                     GridLayoutFragment(),
-                    StaggeredGridFragment()
+                    StaggeredGridFragment(),
+                    DragListFragment()
             ), this@RecyclerViewFragment)
         }
     }
