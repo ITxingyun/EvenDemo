@@ -68,4 +68,10 @@ public class OvalLabelView extends View {
         mPaint.setColor(mOvalTextColor);
         canvas.drawText(mLabel, -textWidth / 2, baseLineY, mPaint);
     }
+
+
+    public void setLabel(String label) {
+        mLabel = label;
+        invalidate();
+    }
 }

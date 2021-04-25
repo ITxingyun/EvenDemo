@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.home.MainActivityViewModel
-import com.xingyun.library.utils.TestObserver
 
 abstract class BaseFragment : Fragment() {
     open val toolbarTitle: String = ""
@@ -18,7 +17,7 @@ abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(hasToolbar)
-        TestObserver(this)
+//        TestObserver(this)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

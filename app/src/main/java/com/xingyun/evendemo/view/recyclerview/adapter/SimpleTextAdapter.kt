@@ -9,6 +9,7 @@ open class SimpleTextAdapter: BaseAdapter<String, ItemSimpleTextBinding>() {
 
     override fun onBind(viewDataBinding: ItemSimpleTextBinding, position: Int) {
         viewDataBinding.text = data[position]
+        viewDataBinding.position = position + 1
     }
 
     override fun getItemCount(): Int = data.size

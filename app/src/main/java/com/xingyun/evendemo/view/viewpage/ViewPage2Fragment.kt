@@ -13,7 +13,7 @@ import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentViewPageBinding
 import com.xingyun.evendemo.view.custom.CustomViewFragment
 import com.xingyun.evendemo.view.menu.MenuFragment
-import com.xingyun.evendemo.view.recyclerview.LinearLayoutFragment
+import com.xingyun.evendemo.view.recyclerview.RecyclerViewFeaturesFragment
 import com.xingyun.evendemo.view.shareelement.ShareElementFragment
 import kotlin.math.abs
 
@@ -58,7 +58,7 @@ class ViewPage2Fragment : BaseFragment() {
             FragmentPageAdapter.PagerTab(::MenuFragment),
             FragmentPageAdapter.PagerTab(::ShareElementFragment),
             FragmentPageAdapter.PagerTab(::CustomViewFragment),
-            FragmentPageAdapter.PagerTab(::LinearLayoutFragment))
+            FragmentPageAdapter.PagerTab(::RecyclerViewFeaturesFragment))
         binding.vpFragment.apply {
             adapter = FragmentPageAdapter(
                 this@ViewPage2Fragment,

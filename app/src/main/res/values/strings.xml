@@ -15,6 +15,9 @@
     <string name="recycler_view_simple">简单的LinearLayoutManager布局</string>
     <string name="recycler_view_multiple_view_type">多ViewType LinearLayoutManager布局</string>
     <string name="test_string01">到了微信架构的v2.x时代，随着业务的快速发展，消息通知不及时和Android 2.3版本之前webview内存泄露问题开始突显。由于代码、内存、apk大小都在增长，对系统资源的占用越来越多，导致微信进程容易被系统回收。因此微信开始转向多进程架构，独立的通信进程保持长连接的稳定性，独立的webview进程也阻隔了内存泄露导致的问题。 </string>
+    <string name="public_add">添加</string>
+    <string name="public_delete">删除</string>
+    <string name="recycler_view_features_add_hint">请输入添加的位置</string>
 
     <!--Bug-->
     <string name="tab_bug">Bug</string>

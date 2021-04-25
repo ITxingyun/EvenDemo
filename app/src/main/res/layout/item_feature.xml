@@ -15,7 +15,7 @@
 
         <variable
             name="listener"
-            type="com.xingyun.evendemo.view.recyclerview.adapter.CacheTestAdapter.OnClickListener" />
+            type="com.xingyun.evendemo.view.recyclerview.adapter.ListAdapter.OnClickListener" />
 
     </data>
 
@@ -31,6 +31,16 @@
             android:background="@color/coolgray_300"
             android:gravity="center_vertical"
             android:orientation="horizontal">
+
+            <com.xingyun.evendemo.view.custom.view.OvalLabelView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/colorPrimary"
+                app:label="@{String.valueOf(position)}"
+                app:labelColor="@color/white"
+                app:labelSize="16dp"
+                tools:label="1" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image"
@@ -57,7 +67,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="16dp"
-                android:onClick="@{() -> listener.onRemoved(position)}"
+                android:onClick="@{() -> listener.onRemoved(text)}"
                 android:src="@drawable/ic_delete" />
 
         </LinearLayout>

@@ -26,7 +26,7 @@ class RecyclerViewFragment : BaseFragment(), ProjectAdapter.OnViewItemClickListe
         binding.recyclerView.apply {
             context?.let { layoutManager = LinearLayoutManager(context) }
             adapter = ProjectAdapter(listOf(
-                    LinearLayoutFragment(),
+                    RecyclerViewFeaturesFragment(),
                     GridLayoutFragment(),
                     StaggeredGridFragment(),
                     DragListFragment()
