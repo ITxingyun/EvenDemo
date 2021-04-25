@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.FragmentRecyclerViewBinding
-import com.xingyun.evendemo.view.recyclerview.adapter.CacheTestAdapter
+import com.xingyun.evendemo.view.recyclerview.adapter.DivideDecorator
 import com.xingyun.evendemo.view.recyclerview.adapter.DragAdapter
 
 /**
@@ -32,8 +31,12 @@ class DragListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dragAdapter = DragAdapter(simpleList)
-        binding.recyclerView.addItemDecoration(CacheTestAdapter.DivideDecorator(resources))
+        val dragAdapter = DragAdapter().apply { updateData(simpleList) }
+        binding.recyclerView.addItemDecoration(
+            DivideDecorator(
+                resources
+            )
+        )
         binding.recyclerView.adapter = dragAdapter
         ItemTouchHelper(MyItemTouchHelperCallback(dragAdapter)).attachToRecyclerView(binding.recyclerView)
     }

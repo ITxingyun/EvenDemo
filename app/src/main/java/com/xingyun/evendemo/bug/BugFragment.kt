@@ -28,8 +28,7 @@ class BugFragment : BaseFragment(),
         )
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter =
-                ProjectAdapter(fragments, this@BugFragment)
+            adapter = ProjectAdapter(fragments, this@BugFragment)
         }
     }
 

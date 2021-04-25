@@ -1,8 +1,5 @@
 package com.xingyun.evendemo.common.adapter
 
-import android.graphics.Rect
-import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import com.xingyun.evendemo.R
 import com.xingyun.evendemo.common.ui.BaseFragment
 import com.xingyun.evendemo.databinding.ItemProjectBinding
@@ -11,7 +8,8 @@ import com.xingyun.library.base.BaseAdapter
 class ProjectAdapter(
     private val fragments: List<BaseFragment>,
     private val onViewItemClickListener: OnViewItemClickListener
-) : BaseAdapter<ItemProjectBinding>() {
+) : BaseAdapter<BaseFragment, ItemProjectBinding>() {
+
 
     override fun getLayoutRes(): Int = R.layout.item_project
 
@@ -29,11 +27,4 @@ class ProjectAdapter(
         fun onItemClick(fragment: BaseFragment)
     }
 
-    class ProjectItemDecoration : RecyclerView.ItemDecoration() {
-
-        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-
-            outRect.set(0, 0, 0, 0)
-        }
-    }
 }

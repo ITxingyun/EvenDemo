@@ -6,19 +6,28 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseAdapter<DB : ViewDataBinding> : RecyclerView.Adapter<BaseViewHolder<DB>>() {
+abstract class BaseAdapter<D, VB : ViewDataBinding> : RecyclerView.Adapter<BaseViewHolder<VB>>() {
+    protected val data: MutableList<D> = mutableListOf();
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<DB> =
-            BaseViewHolder(DataBindingUtil.inflate<DB>(LayoutInflater.from(parent.context), getLayoutRes(), parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> =
+            BaseViewHolder(DataBindingUtil.inflate<VB>(LayoutInflater.from(parent.context), getLayoutRes(), parent, false)
                     .also { onDataBindingCreated(it) })
 
     abstract fun getLayoutRes(): Int
 
-    open fun onDataBindingCreated(viewDataBinding: DB) = Unit
+    open fun onDataBindingCreated(viewDataBinding: VB) = Unit
 
-    override fun onBindViewHolder(viewHolder: BaseViewHolder<DB>, position: Int) {
+    override fun onBindViewHolder(viewHolder: BaseViewHolder<VB>, position: Int) {
         onBind(viewHolder.getViewDataBinding(), position)
     }
 
-    abstract fun onBind(viewDataBinding: DB, position: Int)
+    override fun getItemCount(): Int = data.size
+
+    abstract fun onBind(viewDataBinding: VB, position: Int)
+
+    fun updateData(list: List<D>) {
+        data.clear()
+        data.addAll(list)
+    }
+
 }

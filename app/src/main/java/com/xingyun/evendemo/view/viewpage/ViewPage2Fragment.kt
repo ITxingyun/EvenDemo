@@ -32,7 +32,8 @@ class ViewPage2Fragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         val pages = listOf("page one", "page tow", "page thr`ee", "page four", "page five")
         binding.vpSimple.apply {
-            adapter = SimplePageAdapter(pages)
+            adapter = SimplePageAdapter().apply { updateData(pages) }
+
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageScrollStateChanged(state: Int) {
                     super.onPageScrollStateChanged(state)

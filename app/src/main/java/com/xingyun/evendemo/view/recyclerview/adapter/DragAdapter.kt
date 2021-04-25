@@ -5,7 +5,7 @@ import com.xingyun.evendemo.databinding.ItemSimpleTextBinding
 import com.xingyun.evendemo.view.recyclerview.IItemTouchHelperAdapter
 import java.util.*
 
-class DragAdapter(private val data: MutableList<String>): SimpleTextAdapter(data), IItemTouchHelperAdapter {
+class DragAdapter(): SimpleTextAdapter(), IItemTouchHelperAdapter {
 
     override fun onDataBindingCreated(viewDataBinding: ItemSimpleTextBinding) {
         viewDataBinding.root.setOnClickListener{

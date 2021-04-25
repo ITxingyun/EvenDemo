@@ -34,7 +34,7 @@ class GridLayoutFragment : BaseFragment() {
                     }
                 }
             }
-            adapter = SimpleTextAdapter(simpleList)
+            adapter = SimpleTextAdapter().apply { updateData(simpleList) }
         }
     }
 
