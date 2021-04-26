@@ -1,4 +1,4 @@
-package com.xingyun.thirdlib.mapstruct.simple;
+package com.xingyun.frame.mapstruct.simple;
 
 public class SimpleDestination {
     private String name;

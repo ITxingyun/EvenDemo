@@ -1,4 +1,4 @@
-package com.xingyun.thirdlib.mapstruct.simple;
+package com.xingyun.frame.mapstruct.simple;
 
 import org.mapstruct.Mapper;
 

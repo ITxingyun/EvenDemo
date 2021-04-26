@@ -1,4 +1,4 @@
-package com.xingyun.thirdlib.mapstruct;
+package com.xingyun.frame.mapstruct;
 
 public class Domain {
 	private String doMainName;
