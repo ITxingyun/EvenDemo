@@ -34,6 +34,7 @@
       <module name="EvenDemo.library" target="1.8" />
       <module name="EvenDemo.Test" target="1.8" />
       <module name="EvenDemo.thirdLib" target="1.8" />
+      <module name="EvenDemo.xingyun" target="1.8" />
       <module name="JavaLib" target="1.7" />
     </bytecodeTargetLevel>
   </component>
