@@ -18,10 +18,9 @@
             <option value="$PROJECT_DIR$/apt/apt-library" />
             <option value="$PROJECT_DIR$/apt/apt-processor" />
             <option value="$PROJECT_DIR$/architecture" />
-            <option value="$PROJECT_DIR$/frame" />
-            <option value="$PROJECT_DIR$/layout" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/thirdLib" />
+            <option value="$PROJECT_DIR$/xingyun" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
