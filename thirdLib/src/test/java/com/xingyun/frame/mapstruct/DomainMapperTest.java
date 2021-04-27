@@ -1,6 +1,5 @@
 package com.xingyun.frame.mapstruct;
 
-
 import org.junit.Test;
 
 public class DomainMapperTest {

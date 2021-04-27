@@ -1,5 +1,11 @@
 package com.xingyun.android
 
-class XYApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class XYApplication : Application() {
+
+
 
 }

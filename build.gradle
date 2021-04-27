@@ -1,7 +1,57 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.4.21'
+    ext {
+        kotlinVersion = '1.4.32'
+        gradleVersion = '4.1.2'
+
+        compileSdkVersion = 30
+        targetSdkVersion = 30
+        minSdkVersion = 26
+        buildToolsVersion = "30.0.2"
+        versionCode = 1
+        versionName = "1.0.1"
+
+        //Jetpack
+        lifecycleVersion = "2.2.0"
+        navigationVersion = "2.3.3"
+        pagingVersion = "2.1.2"
+        roomVersion = "2.2.5"
+        roomCompilerVersion = "2.2.5"
+        hiltVersion = '2.33-beta'
+
+        //android
+        appcompatVersion = "1.2.0"
+        coreKtxVersion = "1.3.2"
+        materialVersion = "1.2.0"
+        constraintlayoutVersion = "2.0.2"
+        swiperefreshlayoutVersion = "1.1.0"
+        viewpager2Version = "1.0.0"
+        fragmentVersion = "1.3.0"
+        localbroadcastmanagerVersion = "1.0.0"
+
+        //http
+        retrofitVersion = "2.9.0"
+        okhttpLoggingInterceptorVersion = "3.14.9"
+        okhttpMockwebserverVersion = "4.5.0"
+
+
+        //third_park
+        glideVersion = "4.11.0"
+        leakcanaryVersion = "2.4"
+
+        //test
+        junitVersion = "4.13.2"
+        runnerVersion = "1.3.0"
+        androidJunitVersion = "1.1.2"
+        espressoVersion = "3.3.0"
+        robolectricVersion = "4.4"
+        mockkVersion = "1.10.0"
+        truthVersion = "1.0.1"
+        testCoreVersion = "1.0.1"
+        mockitoVersion = "2.23.0"
+    }
+
     repositories {
         google()
         jcenter()
@@ -9,12 +59,10 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'org.aspectj:aspectjtools:1.8.9'
-        classpath 'org.aspectj:aspectjweaver:1.8.9'
-
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.33-beta'
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
 }
 
