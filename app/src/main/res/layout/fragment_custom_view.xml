@@ -2,40 +2,98 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
-        <com.xingyun.evendemo.view.custom.view.MyFlowLayout
-            android:id="@+id/filter"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/coolgray_500"
-            android:padding="20dp"
-            app:itemSpacing="20dp"
-            app:lineSpacing="20dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-        <com.xingyun.evendemo.view.custom.view.OvalLabelView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            app:label="1"
-            app:labelColor="@color/white"
-            app:labelSize="15dp"
-            app:ovalLabelBackground="@color/colorPrimary" />
+            <com.xingyun.evendemo.view.custom.view.MyFlowLayout
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/coolgray_500"
+                android:padding="20dp"
+                app:itemSpacing="20dp"
+                app:lineSpacing="20dp" />
 
-        <com.xingyun.evendemo.view.custom.view.MyCompoundButton
-            android:id="@+id/cb_test"
-            style="@style/ToggleButtonStyle"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:checked="true"
-            android:clickable="true" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="300dp"
+                android:elevation="4dp"
+                app:cardElevation="10.67dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/bg_muscle" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="300dp"
+                android:background="@drawable/bg_muscle"
+                android:elevation="4dp"
+                android:translationZ="10.67dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/iv_1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="300dp"
+                android:background="@drawable/bg_muscle"
+                android:elevation="4dp"
+                android:translationZ="4dp" />
 
 
-    </LinearLayout>
+            <com.xingyun.evendemo.view.custom.view.OvalLabelView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                app:label="1"
+                app:labelColor="@color/white"
+                app:labelSize="15dp"
+                app:ovalLabelBackground="@color/colorPrimary" />
+
+            <com.xingyun.evendemo.view.custom.view.OvalLabelView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                app:ovalLabelBackground="@color/colorPrimary" />
+
+            <com.xingyun.evendemo.view.custom.view.MyCompoundButton
+                android:id="@+id/cb_test"
+                style="@style/ToggleButtonStyle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:checked="true"
+                android:clickable="true" />
+
+            <com.xingyun.evendemo.view.custom.view.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="#1FF2B62C"
+                android:src="@drawable/bg_muscle"
+                app:borderColor="@color/colorAccent"
+                app:borderWidth="10dp"
+                app:type="circle" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
