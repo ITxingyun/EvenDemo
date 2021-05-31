@@ -1,9 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -68,15 +65,7 @@ dependencies {
     implementation project(':apt:apt-annotation')
     annotationProcessor project(':apt:apt-processor')
 
-    testImplementation "io.mockk:mockk:$rootProject.mockkVersion"
-    testImplementation "com.google.truth:truth:$rootProject.truthVersion"
+    testImplementation testLibraries
 
-    // Optional -- Robolectric environment
-    testImplementation "androidx.test:core:$rootProject.testCoreVersion"
-    testImplementation "org.robolectric:robolectric:$rootProject.robolectricVersion"
-
-    testImplementation "junit:junit:$rootProject.junitVersion"
-    androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation androidTestLibraries
 }

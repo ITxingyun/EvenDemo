@@ -1,4 +1,7 @@
-include ':xingyun'
+include ':WanAndroid:storage'
+include ':WanAndroid:lib'
+include ':WanAndroid:xingyun'
+
 include ':apt:apt-library'
 include ':apt:apt-processor'
 include ':apt:apt-annotation'
