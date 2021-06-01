@@ -50,7 +50,7 @@ dependencies {
     testImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
     //paging
-    implementation "androidx.paging:paging-runtime:$rootProject.pagingVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
 
     //http
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"

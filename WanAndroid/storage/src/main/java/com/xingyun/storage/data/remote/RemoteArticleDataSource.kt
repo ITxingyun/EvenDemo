@@ -8,7 +8,7 @@ class RemoteArticleDataSource constructor(
 ) : IRemoteArticleDataSource {
 
 
-    suspend fun getTopArticles(): Result<List<Article>> {
+    override suspend fun getTopArticles(): Result<List<Article>> {
         return service.getTopArticles()
     }
 

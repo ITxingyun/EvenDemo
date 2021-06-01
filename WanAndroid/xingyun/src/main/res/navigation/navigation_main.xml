@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/project_dest"
         android:name="com.xingyun.android.project.ProjectFragment"
-        android:label="@string/home"
+        android:label="@string/project"
         tools:layout="@layout/fragment_project">
 
     </fragment>
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/mine_dest"
         android:name="com.xingyun.android.mine.MineFragment"
-        android:label="@string/home"
+        android:label="@string/mine"
         tools:layout="@layout/fragment_mine">
 
     </fragment>

@@ -34,7 +34,7 @@ object NetworkModule {
             .writeTimeout(WRITE_TIME_OUT, TimeUnit.MILLISECONDS)
 //            .cookieJar(CookiesManager())
             .addInterceptor(httpLoggingInterceptor)
-            .addInterceptor(NetworkInterceptor())
+//            .addInterceptor(NetworkInterceptor())
             .build()
     }
 

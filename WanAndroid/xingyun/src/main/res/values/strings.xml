@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">xingyun</string>
+    <string name="app_name">学Android</string>
 
     <!--tab-->
     <string name="home">首页</string>
@@ -17,7 +17,7 @@
     <!--Search-->
     <string name="search_hint">搜索文章、用户、标签</string>
     <string name="search_rank">排行榜</string>
-    <string name="search_system">体系</string>
+    <string name="search_system">搜索体系</string>
     <string name="search_navigation">导航</string>
     <string name="search_topic">话题</string>
     <string name="search_top_article">热门文章</string>
