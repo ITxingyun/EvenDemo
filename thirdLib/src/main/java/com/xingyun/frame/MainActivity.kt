@@ -6,15 +6,29 @@ import com.xingyun.frame.eventbus.EventBusActivity
 import com.xingyun.frame.eventbus.MessageEvent
 import com.xingyun.frame.glide.GlideActivity
 import com.xingyun.frame.greendao.GreenDaoActivity
+import com.xingyun.frame.hilt.User
+import com.xingyun.frame.hilt.UserProfile
+import com.xingyun.frame.hilt.UserProfile2
 import com.xingyun.frame.leakcanary.LeakCanaryActivity
 import com.xingyun.frame.okhttp.OkHttpActivity
 import com.xingyun.frame.retrofit.RetrofitActivity
 import com.xingyun.frame.rxjava.RxJavaActivity
 import com.xingyun.library.utils.start
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    @Inject
+    lateinit var user: User
+
+    @Inject
+    lateinit var userProfile: UserProfile
+
+    @Inject
+    lateinit var userProfile2: UserProfile2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

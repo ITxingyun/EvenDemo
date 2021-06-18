@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 29
@@ -62,6 +63,19 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.3'
+
+    implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+
+    //For instrumentation tests
+    androidTestImplementation  "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
+    //For local unit tests
+    testImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
+    kaptTest "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
+
+    //微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.4'
 }
 
 kapt {
