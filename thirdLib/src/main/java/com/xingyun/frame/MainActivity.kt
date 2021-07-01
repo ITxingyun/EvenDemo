@@ -9,6 +9,7 @@ import com.xingyun.frame.greendao.GreenDaoActivity
 import com.xingyun.frame.hilt.User
 import com.xingyun.frame.hilt.UserProfile
 import com.xingyun.frame.hilt.UserProfile2
+import com.xingyun.frame.hilt.UserProfile3
 import com.xingyun.frame.leakcanary.LeakCanaryActivity
 import com.xingyun.frame.okhttp.OkHttpActivity
 import com.xingyun.frame.retrofit.RetrofitActivity
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var userProfile2: UserProfile2
+
+    @Inject
+    lateinit var userProfile3: UserProfile3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

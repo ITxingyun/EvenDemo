@@ -46,8 +46,8 @@ dependencies {
     implementation "org.greenrobot:eventbus:$event_bus_version"
     kapt "org.greenrobot:eventbus-annotation-processor:$event_bus_version"
 
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    kapt  'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt  'com.github.bumptech.glide:compiler:4.12.0'
 
     implementation "io.reactivex.rxjava2:rxjava:2.2.9"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
@@ -62,7 +62,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
@@ -76,6 +76,13 @@ dependencies {
 
     //微信
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.7.4'
+
+    //mmkv
+    implementation 'com.tencent:mmkv:1.0.22'
+
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }
 
 kapt {
