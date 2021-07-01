@@ -1,9 +1,9 @@
 package com.xingyun.storage.http.api
 
-sealed class Result<out T : Any> {
+sealed class XResult<out T : Any> {
 
-    data class Success<out T : Any>(val data: T) : Result<T>()
-    data class Error(val exception: Exception) : Result<Nothing>()
+    data class Success<out T : Any>(val data: T) : XResult<T>()
+    data class Error(val exception: Exception) : XResult<Nothing>()
 
     override fun toString(): String {
         return when (this) {

@@ -15,9 +15,7 @@ class ArticleViewModel @Inject constructor(
     fun loadArticle() {
         viewModelScope.launch {
             val result = articleRepository.getArticle()
-            if (result.isSuccess) {
-                result.getOrNull()
-            }
+            result
         }
 
     }
