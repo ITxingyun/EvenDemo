@@ -22,20 +22,20 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
       <module name="apt-annotation" target="1.7" />
-      <module name="EvenDemo.app" target="1.8" />
-      <module name="EvenDemo.apt.apt-annotation" target="1.8" />
-      <module name="EvenDemo.apt.apt-library" target="1.8" />
-      <module name="EvenDemo.apt.apt-processor" target="1.8" />
-      <module name="EvenDemo.architecture" target="1.8" />
+      <module name="EvenDemo.app" target="11" />
+      <module name="EvenDemo.apt.apt-annotation" target="11" />
+      <module name="EvenDemo.apt.apt-library" target="11" />
+      <module name="EvenDemo.apt.apt-processor" target="11" />
+      <module name="EvenDemo.architecture" target="11" />
       <module name="EvenDemo.jetpack" target="1.8" />
       <module name="EvenDemo.KotlinLib" target="1.8" />
       <module name="EvenDemo.layout" target="1.8" />
-      <module name="EvenDemo.library" target="1.8" />
+      <module name="EvenDemo.library" target="11" />
       <module name="EvenDemo.Test" target="1.8" />
-      <module name="EvenDemo.thirdLib" target="1.8" />
-      <module name="EvenDemo.WanAndroid.lib" target="1.8" />
-      <module name="EvenDemo.WanAndroid.storage" target="1.8" />
-      <module name="EvenDemo.WanAndroid.xingyun" target="1.8" />
+      <module name="EvenDemo.thirdLib" target="11" />
+      <module name="EvenDemo.WanAndroid.lib" target="11" />
+      <module name="EvenDemo.WanAndroid.storage" target="11" />
+      <module name="EvenDemo.WanAndroid.xingyun" target="11" />
       <module name="JavaLib" target="1.7" />
     </bytecodeTargetLevel>
   </component>

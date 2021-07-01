@@ -1,13 +1,13 @@
 package com.xingyun.storage.data.entity
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
-@Entity
-data class Article(
+@Entity(tableName = "article")
+data class Article constructor(
     @PrimaryKey val id: Int,
-    @Embedded val title: String,
+    val title: String,
     val link: String,
     val apkLink: String,
     val audit: Int,
@@ -41,3 +41,22 @@ data class Article(
 )
 
 data class Tag(val name: String, val url: String)
+
+class TagsConverters {
+    @TypeConverter
+    fun tagsToString(tags: List<Tag>?): String? {
+        return tags?.run {
+            val type = object : TypeToken<List<Tag>>() {}.type
+            Gson().toJson(tags, type)
+        }
+    }
+
+    @TypeConverter
+    fun stringToTags(value: String?): List<Tag>? {
+        return value?.run {
+            val type = object : TypeToken<List<Tag>>() {}.type
+            Gson().fromJson(value, type)
+        }
+    }
+
+}

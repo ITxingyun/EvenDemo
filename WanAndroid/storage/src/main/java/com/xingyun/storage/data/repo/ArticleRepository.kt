@@ -11,7 +11,7 @@ class ArticleRepository @Inject constructor(
 ) {
 
     suspend fun getArticle() : Result<List<Article>> {
-        return remoteArticleDataSource.getTopArticles();
+        return remoteArticleDataSource.getTopArticles()
     }
 
 }

@@ -10,7 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MineFragment : Fragment(R.layout.fragment_mine) {
-    private val viewModel: ArticleViewModel by viewModels()
+    private val viewModel by viewModels<ArticleViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.loadArticle()
