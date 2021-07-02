@@ -1,5 +1,6 @@
 package com.xingyun.storage.data.repo
 
+import android.util.Log
 import com.xingyun.storage.data.entity.Article
 import com.xingyun.storage.data.local.ILocalArticleDataSource
 import com.xingyun.storage.data.remote.IRemoteArticleDataSource
@@ -17,17 +18,24 @@ class ArticleRepository @Inject constructor(
 ) {
 
     suspend fun getArticle(): List<Article>? {
-        val result = remoteArticleDataSource.getTopArticles()
-        return if (result is XResult.Success) {
-            withContext(ioDispatcher) {
-                launch {
-                    localArticleDataSource.updateArticle(result.data)
-                }
-            }
-            result.data
-        } else {
-            null
+//        val result = remoteArticleDataSource.getTopArticles()
+//        return if (result is XResult.Success) {
+//            localArticleDataSource.updateArticle(result.data)
+//            result.data
+//        } else {
+//            null
+//        }
+
+        try {
+            val article1 =  localArticleDataSource.selectArticle(12554)
+            Log.e("even", article1.toString())
+            val article2 =  localArticleDataSource.selectArticle(1)
+            Log.e("even", article2.toString())
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
+
+        return null
     }
 
 }

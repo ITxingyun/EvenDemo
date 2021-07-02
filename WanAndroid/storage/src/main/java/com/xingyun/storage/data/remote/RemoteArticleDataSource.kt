@@ -4,7 +4,6 @@ import com.xingyun.storage.data.entity.Article
 import com.xingyun.storage.http.api.WebService
 import com.xingyun.storage.http.api.XResult
 import com.xingyun.storage.utils.apiCall
-import javax.inject.Inject
 
 class RemoteArticleDataSource(
     private val service: WebService

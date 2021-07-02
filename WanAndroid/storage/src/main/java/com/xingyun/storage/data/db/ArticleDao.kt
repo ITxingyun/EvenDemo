@@ -3,6 +3,7 @@ package com.xingyun.storage.data.db
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.Query
 import com.xingyun.storage.data.entity.Article
 
 @Dao
@@ -15,4 +16,7 @@ interface ArticleDao {
 
     @Delete
     fun delete(article: Article)
+
+    @Query("select *from article where id == :id")
+    fun selectArticle(id: Int): Article
 }

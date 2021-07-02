@@ -11,5 +11,7 @@ class LocalArticleDataSource(private val appDatabase: AppDatabase) : ILocalArtic
         appDatabase.userDao().insertAll(articles)
     }
 
-
+    override suspend fun selectArticle(id: Int): Article {
+        return appDatabase.userDao().selectArticle(id)
+    }
 }
