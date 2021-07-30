@@ -56,6 +56,8 @@ class CustomViewFragment : BaseFragment() {
             }
 
         }
+
+        binding.tagList.addTag(listOf("标签xx01", "标签sss02", "标签103", "标签4", "标签103", "标签4", "标签103"))
     }
 
 }

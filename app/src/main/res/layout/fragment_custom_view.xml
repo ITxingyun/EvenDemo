@@ -93,6 +93,13 @@
                 app:borderWidth="10dp"
                 app:type="circle" />
 
+            <com.xingyun.evendemo.view.custom.view.XXXListView
+                android:id="@+id/tag_list"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp" />
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

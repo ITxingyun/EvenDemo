@@ -27,6 +27,7 @@
         <activity android:name="com.xingyun.frame.greendao.GreenDaoActivity" />
         <activity android:name="com.xingyun.frame.okhttp.OkHttpActivity" />
         <activity android:name="com.xingyun.frame.retrofit.RetrofitActivity" />
+        <activity android:name=".hilt.HiltUnSupportActivity"/>
     </application>
 
 </manifest>

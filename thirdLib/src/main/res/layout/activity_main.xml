@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -56,5 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Retrofit" />
+
+    <TextView
+        android:id="@+id/tv_hilt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="go to hilt unSupport activity" />
 
 </LinearLayout>

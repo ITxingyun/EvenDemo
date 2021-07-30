@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.xingyun.lib.base.BaseFragment
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class ArticleFragment : BaseFragment() {
     private val viewModel: ArticleViewModel by viewModels()
 

@@ -13,7 +13,7 @@ import android.net.Uri
 class MyContentProvider : ContentProvider() {
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override fun query(
@@ -23,12 +23,12 @@ class MyContentProvider : ContentProvider() {
         selectionArgs: Array<out String>?,
         sortOrder: String?
     ): Cursor? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override fun onCreate(): Boolean {
-        TODO("Not yet implemented")
 //        context?.contentResolver.
+        return false
     }
 
     override fun update(
@@ -37,7 +37,7 @@ class MyContentProvider : ContentProvider() {
         selection: String?,
         selectionArgs: Array<out String>?
     ): Int {
-        TODO("Not yet implemented")
+       return -1
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
@@ -45,7 +45,7 @@ class MyContentProvider : ContentProvider() {
     }
 
     override fun getType(uri: Uri): String? {
-        TODO("Not yet implemented")
+       return null
     }
 
 }

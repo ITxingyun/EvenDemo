@@ -1,10 +1,10 @@
 package com.xingyun.frame.retrofit
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.xingyun.frame.BaseActivity
 import com.xingyun.frame.R
 
-class RetrofitActivity: AppCompatActivity() {
+class RetrofitActivity: BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
