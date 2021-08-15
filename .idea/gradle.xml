@@ -22,12 +22,13 @@
             <option value="$PROJECT_DIR$/apt/apt-library" />
             <option value="$PROJECT_DIR$/apt/apt-processor" />
             <option value="$PROJECT_DIR$/architecture" />
+            <option value="$PROJECT_DIR$/ioc" />
+            <option value="$PROJECT_DIR$/ioc/daggerdemo1" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/thirdLib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
