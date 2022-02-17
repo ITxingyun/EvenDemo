@@ -12,12 +12,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_main.xml" value="0.18297101449275363" />
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_web_view.xml" value="0.18297101449275363" />
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_home.xml" value="0.18297101449275363" />
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_mine.xml" value="0.18297101449275363" />
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_project.xml" value="0.1" />
-        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_rank.xml" value="0.18297101449275363" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_home.xml" value="0.353" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_hot.xml" value="0.353" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.353" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_navigation.xml" value="0.353" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_topic.xml" value="0.362" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_user.xml" value="0.3665" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable-v24/ic_user_profile.xml" value="0.316" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/drawable/tab_icon_color_selector.xml" value="0.362" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_main.xml" value="0.3061594202898551" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_web_view.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_home.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_mine.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_project.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_recommend_article.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_project.xml" value="0.35778985507246375" />
+        <entry key="..\:/Android/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_recommend_article.xml" value="0.35778985507246375" />
       </map>
     </option>
   </component>

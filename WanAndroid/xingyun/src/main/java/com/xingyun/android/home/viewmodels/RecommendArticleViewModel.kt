@@ -1,4 +1,4 @@
-package com.xingyun.android.article
+package com.xingyun.android.home.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,11 +11,14 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 @HiltViewModel
-class ArticleViewModel @Inject constructor(
+class RecommendArticleViewModel @Inject internal constructor(
     private val articleRepository: ArticleRepository
-) : ViewModel() {
+): ViewModel()  {
 
-    fun loadArticle(): Flow<PagingData<RecommendArticle>> {
+
+
+
+    fun loadArticles() : Flow<PagingData<RecommendArticle>> {
         return articleRepository.getRecommendArticles().cachedIn(viewModelScope)
     }
 

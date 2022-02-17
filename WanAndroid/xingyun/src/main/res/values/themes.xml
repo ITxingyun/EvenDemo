@@ -14,4 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.Xingyun.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
 </resources>

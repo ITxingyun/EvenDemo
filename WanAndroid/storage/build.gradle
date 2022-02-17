@@ -65,6 +65,7 @@ dependencies {
 
     //paging
     implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
+    implementation "androidx.paging:paging-common-ktx:$rootProject.pagingVersion"
 
     //http
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"

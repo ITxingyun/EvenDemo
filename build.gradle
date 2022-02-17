@@ -6,7 +6,7 @@ buildscript {
         gradleVersion = '7.1.1'
         jacocoVersion = '0.8.7'
 
-        compileSdkVersion = 30
+        compileSdkVersion = 31
         targetSdkVersion = 30
         minSdkVersion = 26
         buildToolsVersion = "30.0.2"
@@ -16,17 +16,16 @@ buildscript {
         //Jetpack
         lifecycleVersion = "2.2.0"
         navigationVersion = "2.5.0-alpha01"
-        pagingVersion = "2.1.2"
-        roomVersion = "2.4.0"
+        roomVersion = "2.4.1"
         roomCompilerVersion = "2.2.5"
         hiltVersion = '2.40.5'
-        pagingVersion = '3.0.0'
+        pagingVersion = '3.1.0'
         hiltLifecycleViewmodelVersion = '1.0.0-alpha03'
 
         //android
-        appcompatVersion = "1.3.0"
+        appcompatVersion = "1.4.1"
         coreKtxVersion = "1.6.0"
-        materialVersion = "1.4.0"
+        materialVersion = "1.5.0"
         constraintlayoutVersion = "2.0.4"
         swiperefreshlayoutVersion = "1.1.0"
         viewpager2Version = "1.0.0"
@@ -35,10 +34,10 @@ buildscript {
 
         //http
         retrofitVersion = "2.9.0"
-        okhttpLoggingInterceptorVersion = "4.7.2"
+        okhttpLoggingInterceptorVersion = "4.9.3"
         okhttpMockwebserverVersion = "4.5.0"
 
-        gsonVersion = "2.8.7"
+        gsonVersion = "2.8.9"
 
         //third_park
         glideVersion = "4.12.0"

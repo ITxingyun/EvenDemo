@@ -1,41 +1,31 @@
 package com.xingyun.storage.data.repo
 
-import android.util.Log
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.xingyun.storage.data.dp.RecommendArticle
 import com.xingyun.storage.data.entity.Article
 import com.xingyun.storage.data.local.ILocalArticleDataSource
-import com.xingyun.storage.data.remote.IRemoteArticleDataSource
-import com.xingyun.storage.http.api.XResult
+import com.xingyun.storage.data.remote.RecommendArticlePagingSource
+import com.xingyun.storage.http.api.WebService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class ArticleRepository @Inject constructor(
-    private val remoteArticleDataSource: IRemoteArticleDataSource,
-    private val localArticleDataSource: ILocalArticleDataSource,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val service: WebService
 ) {
 
-    suspend fun getArticle(): List<Article>? {
-//        val result = remoteArticleDataSource.getTopArticles()
-//        return if (result is XResult.Success) {
-//            localArticleDataSource.updateArticle(result.data)
-//            result.data
-//        } else {
-//            null
-//        }
+    fun getRecommendArticles(): Flow<PagingData<RecommendArticle>> {
+        return Pager(
+            config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
+            pagingSourceFactory = { RecommendArticlePagingSource(service) }
+        ).flow
+    }
 
-        try {
-            val article1 =  localArticleDataSource.selectArticle(12554)
-            Log.e("even", article1.toString())
-            val article2 =  localArticleDataSource.selectArticle(1)
-            Log.e("even", article2.toString())
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        return null
+    companion object {
+        private const val NETWORK_PAGE_SIZE = 25
     }
 
 }

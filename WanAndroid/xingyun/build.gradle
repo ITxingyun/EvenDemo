@@ -75,6 +75,10 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hiltLifecycleViewmodelVersion"
     kapt "androidx.hilt:hilt-compiler:$rootProject.hiltLifecycleViewmodelVersion"
 
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
+    implementation "androidx.paging:paging-common-ktx:$rootProject.pagingVersion"
+
     //For instrumentation tests
     androidTestImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
     kaptAndroidTest "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
