@@ -7,9 +7,6 @@
 
         <import type="android.text.TextUtils" />
 
-        <variable
-            name="article"
-            type="com.xingyun.storage.data.entity.Article" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +24,6 @@
             android:layout_marginEnd="20dp"
             android:gravity="start"
             android:textColor="@color/midnight"
-            app:htmlText="@{article.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,7 +47,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@{article.niceShareDate}"
             android:textColor="@color/coolgray_500"
             app:layout_constraintBottom_toBottomOf="@+id/iv_time"
             app:layout_constraintStart_toEndOf="@+id/iv_time"

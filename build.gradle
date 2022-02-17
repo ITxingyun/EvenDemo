@@ -3,7 +3,7 @@
 buildscript {
     ext {
         kotlinVersion = '1.6.10'
-        gradleVersion = '7.0.4'
+        gradleVersion = '7.1.1'
         jacocoVersion = '0.8.7'
 
         compileSdkVersion = 30
@@ -15,11 +15,11 @@ buildscript {
 
         //Jetpack
         lifecycleVersion = "2.2.0"
-        navigationVersion = "2.3.5"
+        navigationVersion = "2.5.0-alpha01"
         pagingVersion = "2.1.2"
-        roomVersion = "2.3.0"
+        roomVersion = "2.4.0"
         roomCompilerVersion = "2.2.5"
-        hiltVersion = '2.36'
+        hiltVersion = '2.40.5'
         pagingVersion = '3.0.0'
         hiltLifecycleViewmodelVersion = '1.0.0-alpha03'
 
@@ -82,6 +82,7 @@ buildscript {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
 }
 

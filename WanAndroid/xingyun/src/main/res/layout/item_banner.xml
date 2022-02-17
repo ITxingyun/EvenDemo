@@ -4,9 +4,7 @@
 
     <data>
 
-        <variable
-            name="banner"
-            type="com.xingyun.storage.data.entity.Banner" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +16,6 @@
             android:id="@+id/iv_banner"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:itemImageUrl="@{banner.imagePath}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

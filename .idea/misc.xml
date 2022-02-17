@@ -9,6 +9,18 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_main.xml" value="0.18297101449275363" />
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/activity_web_view.xml" value="0.18297101449275363" />
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_home.xml" value="0.18297101449275363" />
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/fragment_mine.xml" value="0.18297101449275363" />
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_project.xml" value="0.1" />
+        <entry key="..\:/code/EvenDemo/WanAndroid/xingyun/src/main/res/layout/item_rank.xml" value="0.18297101449275363" />
+      </map>
+    </option>
+  </component>
   <component name="FindBugsConfigurable">
     <option name="make" value="true" />
     <option name="effort" value="default" />
