@@ -37,6 +37,7 @@
       <module name="EvenDemo.WanAndroid.lib" target="11" />
       <module name="EvenDemo.WanAndroid.storage" target="11" />
       <module name="EvenDemo.WanAndroid.xingyun" target="11" />
+      <module name="EvenDemo.xingyun" target="11" />
       <module name="JavaLib" target="1.7" />
     </bytecodeTargetLevel>
   </component>

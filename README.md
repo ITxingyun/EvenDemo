@@ -67,7 +67,7 @@
 #### MVVM
 
 #### xingyun 
-xingyun，一个架构demo，使用Jetpack实现了WanAndroid app。[链接](WanAndroid/xingyun/README.md)
+xingyun，一个架构demo，使用Jetpack实现了WanAndroid app。[链接](xingyun/README.md)
 
 ### 自动化测试
 [参考](https://developer.android.com/training/testing/fundamentals#write-tests)

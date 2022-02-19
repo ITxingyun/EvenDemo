@@ -2,8 +2,9 @@ package com.xingyun.frame.okhttp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.xingyun.frame.R
-import kotlinx.android.synthetic.main.activity_ok_http.*
+import com.xingyun.frame.databinding.ActivityOkHttpBinding
 import okhttp3.*
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -14,6 +15,7 @@ class OkHttpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ok_http)
+        val binding = DataBindingUtil.setContentView<ActivityOkHttpBinding>(this, R.layout.activity_ok_http)
 
         val okHttpClient =
             OkHttpClient
@@ -24,7 +26,7 @@ class OkHttpActivity : AppCompatActivity() {
                 .readTimeout(20, TimeUnit.SECONDS)
                 .build()
 
-        tv_execute.setOnClickListener {
+        binding.tvExecute.setOnClickListener {
             val request = Request.Builder()
                 .get()
                 .url("https://www.baidu.com")
@@ -36,7 +38,7 @@ class OkHttpActivity : AppCompatActivity() {
 
         }
 
-        tv_enqueue.setOnClickListener {
+        binding.tvEnqueue.setOnClickListener {
             val request = Request.Builder()
                 .get()
                 .url("https://www.baidu.com")

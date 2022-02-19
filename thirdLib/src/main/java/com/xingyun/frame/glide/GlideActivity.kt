@@ -2,24 +2,26 @@ package com.xingyun.frame.glide
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.xingyun.frame.R
-import kotlinx.android.synthetic.main.activity_glide.*
+import com.xingyun.frame.databinding.ActivityGlideBinding
 
 class GlideActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_glide)
-        initImage()
+        val binding = DataBindingUtil.setContentView<ActivityGlideBinding>(this, R.layout.activity_glide)
+        initImage(binding)
     }
 
-    private fun initImage() {
+    private fun initImage(binding: ActivityGlideBinding) {
         GlideApp.with(this)
             .load(URL)
             .placeholder(R.drawable.bg_default)
             .error( GlideApp.with(this).load(URL))
             .fallback(R.drawable.bg_default)
-            .into(iv_1)
+            .into(binding.iv1)
 
 
     }

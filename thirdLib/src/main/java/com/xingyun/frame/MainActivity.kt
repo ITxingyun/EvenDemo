@@ -1,6 +1,8 @@
 package com.xingyun.frame
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import com.xingyun.frame.databinding.ActivityMainBinding
 import com.xingyun.frame.eventbus.EventBusActivity
 import com.xingyun.frame.eventbus.MessageEvent
 import com.xingyun.frame.glide.GlideActivity
@@ -11,7 +13,6 @@ import com.xingyun.frame.okhttp.OkHttpActivity
 import com.xingyun.frame.retrofit.RetrofitActivity
 import com.xingyun.frame.rxjava.RxJavaActivity
 import com.xingyun.library.utils.start
-import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 
@@ -30,40 +31,40 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        tv_event_bus.setOnClickListener {
+        binding.tvEventBus.setOnClickListener {
             Thread {
                 EventBus.getDefault().postSticky(MessageEvent("xingyun"))
             }.start()
             start<EventBusActivity>()
         }
 
-        tv_rx_java.setOnClickListener {
+        binding.tvRxJava.setOnClickListener {
             start<RxJavaActivity>()
         }
 
-        tv_glide.setOnClickListener {
+        binding.tvGlide.setOnClickListener {
             start<GlideActivity>()
         }
 
-        tv_leak_canary.setOnClickListener {
+        binding.tvLeakCanary.setOnClickListener {
             start<LeakCanaryActivity>()
         }
 
-        tv_green_dao.setOnClickListener {
+        binding.tvGreenDao.setOnClickListener {
             start<GreenDaoActivity>()
         }
 
-        tv_ok_http.setOnClickListener {
+        binding.tvOkHttp.setOnClickListener {
             start<OkHttpActivity>()
         }
 
-        tv_retrofit.setOnClickListener {
+        binding.tvRetrofit.setOnClickListener {
             start<RetrofitActivity>()
         }
 
-        tv_hilt.setOnClickListener {
+        binding.tvHilt.setOnClickListener {
             start<HiltUnSupportActivity>()
         }
 

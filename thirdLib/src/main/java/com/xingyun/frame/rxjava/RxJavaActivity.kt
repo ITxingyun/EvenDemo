@@ -3,22 +3,23 @@ package com.xingyun.frame.rxjava
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.xingyun.frame.R
+import com.xingyun.frame.databinding.ActivityRxjavaBinding
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_rxjava.*
 
 class RxJavaActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rxjava)
+        val binding = DataBindingUtil.setContentView<ActivityRxjavaBinding>(this, R.layout.activity_rxjava)
 
-        tvSubscribe.setOnClickListener {
+        binding.tvSubscribe.setOnClickListener {
             subscribe()
         }
     }

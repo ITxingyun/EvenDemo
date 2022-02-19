@@ -13,10 +13,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/JavaLib" />
             <option value="$PROJECT_DIR$/KotlinLib" />
-            <option value="$PROJECT_DIR$/WanAndroid" />
-            <option value="$PROJECT_DIR$/WanAndroid/lib" />
-            <option value="$PROJECT_DIR$/WanAndroid/storage" />
-            <option value="$PROJECT_DIR$/WanAndroid/xingyun" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/apt" />
             <option value="$PROJECT_DIR$/apt/apt-annotation" />
@@ -28,6 +24,7 @@
             <option value="$PROJECT_DIR$/ioc/di" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/thirdLib" />
+            <option value="$PROJECT_DIR$/xingyun" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
