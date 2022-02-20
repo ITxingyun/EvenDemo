@@ -8,10 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.xingyun.android.R
+import com.xingyun.android.adapter.FragmentPageAdapter
 import com.xingyun.android.databinding.FragmentHomeBinding
-import com.xingyun.android.adapter.HomePageAdapter
-import com.xingyun.android.adapter.RECOMMEND_ARTICLE_PAGE_INDEX
-import com.xingyun.android.adapter.SQUARE_PAGE_INDEX
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +20,11 @@ class HomeFragment : Fragment() {
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
 
-        viewPager.adapter = HomePageAdapter(this)
+        val fragments = listOf(
+            FragmentPageAdapter.PagerTab(::RecommendArticleFragment),
+            FragmentPageAdapter.PagerTab(::SquareFragment)
+        )
+        viewPager.adapter = FragmentPageAdapter(this, fragments)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = getTabTitle(position)
         }.attach()
@@ -38,5 +40,10 @@ class HomeFragment : Fragment() {
             SQUARE_PAGE_INDEX -> getString(R.string.home_tab_square)
             else -> null
         }
+    }
+
+    companion object {
+        private const val RECOMMEND_ARTICLE_PAGE_INDEX = 0
+        private const val SQUARE_PAGE_INDEX = 1
     }
 }

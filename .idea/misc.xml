@@ -26,7 +26,12 @@
         <entry key="..\:/code/EvenDemo/thirdLib/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/code/EvenDemo/thirdLib/src/main/res/layout/activity_ok_http.xml" value="0.25364583333333335" />
         <entry key="..\:/code/EvenDemo/thirdLib/src/main/res/layout/activity_rxjava.xml" value="0.2078804347826087" />
+        <entry key="..\:/code/EvenDemo/xingyun/src/main/res/drawable/tab_icon_color_selector.xml" value="0.259" />
+        <entry key="..\:/code/EvenDemo/xingyun/src/main/res/layout/activity_main.xml" value="0.14356884057971014" />
+        <entry key="..\:/code/EvenDemo/xingyun/src/main/res/layout/fragment_home.xml" value="0.25181159420289856" />
+        <entry key="..\:/code/EvenDemo/xingyun/src/main/res/layout/fragment_main.xml" value="0.2078804347826087" />
         <entry key="..\:/code/EvenDemo/xingyun/src/main/res/layout/item_recommend_article.xml" value="0.19791666666666666" />
+        <entry key="..\:/code/EvenDemo/xingyun/src/main/res/menu/bottom_nav_menu.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>
