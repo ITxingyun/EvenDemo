@@ -2,6 +2,7 @@ package com.xingyun.frame
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.alibaba.android.arouter.launcher.ARouter
 import com.xingyun.frame.databinding.ActivityMainBinding
 import com.xingyun.frame.eventbus.EventBusActivity
 import com.xingyun.frame.eventbus.MessageEvent
@@ -61,7 +62,7 @@ class MainActivity : BaseActivity() {
         }
 
         binding.tvRetrofit.setOnClickListener {
-            start<RetrofitActivity>()
+            ARouter.getInstance().build("/test/activity").navigation();
         }
 
         binding.tvHilt.setOnClickListener {
